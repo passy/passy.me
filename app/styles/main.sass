@@ -1,0 +1,64 @@
+@import compass/css3/box-shadow
+@import compass/css3/images
+@import compass/utilities/general/clearfix
+
+@import partials/media_queries
+@import partials/image_2x
+
+$CONTENT_MAX_WIDTH: 37.62136em
+$CONTENT_FONT_SIZE: 103%
+
+$COLOR_BRIGHT: #fefefe
+
+body
+    background: $COLOR_BRIGHT
+    +image-2x('white_wall_hash.png', 500px, 500px)
+    font-family: Cabin, Helvetica, Arial, sans-serif
+    margin: 0
+    padding: 0
+
+
+h1, h2, h3, h4
+    font-family: 'Lobster Two', Georgia, Times, serif
+    margin-top: 0
+    margin-bottom: 0.3em
+
+h1
+    font-size: 2.5rem
+
+h2, h3, h4
+    font-weight: normal
+
+// Header
+[role=banner]
+    +clearfix
+    +background(radial-gradient(50% 50%, 300px 200px, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.15) 100%), image_url('bgpattern.png'))
+
+    .content
+        margin: 0 auto
+        padding: 2em 0
+        overflow: hidden
+
+    .avatar
+        border-radius: 128px
+        display: block
+        width: 128px
+        height: 128px
+        float: left
+
+        +image-2x('avatar.png', 128px, 128px)
+        +box-shadow(0 0 30px transparentize(black, 0.5) inset)
+
+    hgroup
+        color: $COLOR_BRIGHT
+        text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3)
+        width: 25em
+        float: right
+
+    h2
+        font-style: italic
+
+.content
+    font-size: $CONTENT_FONT_SIZE
+    width: $CONTENT_MAX_WIDTH
+    margin: 2em auto

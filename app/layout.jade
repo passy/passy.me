@@ -5,8 +5,9 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     title Hello World
     meta(name='description', content='')
-    meta(name='viewport', content='width=device-width')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Cabin:400,700|Lobster+Two:400,700')
     link(rel='author', href='/humans.txt')
 
     // build:js scripts/vendor/modernizr.js
@@ -14,6 +15,14 @@ html(lang='en')
     // endbuild
   body
     .container
+      header(role='banner')
+        .content
+          a.avatar(title='Pascal Hartig', href='/')
+
+          hgroup
+            h1 Pascal Hartig
+            h2 Software Engineer at weluse &amp; Open Source Maniac
+
       block content
 
     script
