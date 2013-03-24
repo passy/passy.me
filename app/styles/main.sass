@@ -1,6 +1,7 @@
 @import compass/css3/box-shadow
 @import compass/css3/images
 @import compass/css3/transition
+@import compass/css3/transform
 
 @import partials/media_queries
 @import partials/image_2x
@@ -12,7 +13,7 @@ $CONTENT_MAX_WIDTH: 960px
 $MENU_WIDTH: 180px
 
 =clearfix
-    &:after
+    &::after
         content: ' '
         display: block
         clear: both
@@ -227,18 +228,38 @@ a
         display: block
 
     .header
+        position: relative
+
+        > a::after
+            +design-sprite('disclosure')
+            width: design-sprite-width('disclosure')
+            height: design-sprite-height('disclosure')
+            display: block
+            content: ""
+
+            position: absolute
+            top: 0
+            right: 0
+
+        &.expanded
+            background: $COLOR_HIGHLIGHT
+
+            > a::after
+                +rotate(180deg)
+
+            ul
+                display: block
+                background: $COLOR_BOX
+
+        &.active > a
+            color: $HOLO_BLUE
+
         > a
             font-weight: 700
             padding: 0 10px
 
-        &.active
-            background: $COLOR_HIGHLIGHT
-
-            ul
-                background: $COLOR_BOX
-
-            > a
-                color: $HOLO_BLUE
+        ul
+            display: none
 
         li
             padding: 0 10px
