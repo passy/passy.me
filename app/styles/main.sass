@@ -4,78 +4,171 @@
 
 @import partials/media_queries
 @import partials/image_2x
+@import colors
 
-$CONTENT_MAX_WIDTH: 37.62136em
-$CONTENT_FONT_SIZE: 103%
+$CONTENT_MAX_WIDTH: 960px
+$MENU_WIDTH: 180px
 
-$COLOR_BRIGHT: #fefefe
+*
+    box-sizing: border-box
 
 html
     -webkit-text-size-adjust: 100%
     -ms-text-size-adjust: 100%
 
 body
-    background: $COLOR_BRIGHT
-    +image-2x('white_wall_hash.png', 500px, 500px)
-    font-family: Cabin, Helvetica, Arial, sans-serif
-    margin: 0
-    padding: 0
+    background: $COLOR_BG
+    font-family: Roboto, Helvetica, Arial, sans-serif
+    padding: 0.5em
 
+    width: $CONTENT_MAX_WIDTH
+    margin: 0 auto
+
+    color: $COLOR_TEXT
 
 h1, h2, h3, h4
-    font-family: 'Lobster Two', Georgia, Times, serif
     margin-top: 0
     margin-bottom: 0.3em
 
 h1
-    font-size: 2.5rem
+    font-size: 2rem
 
 h2, h3, h4
     font-weight: normal
 
+ul
+    margin: 0
+    padding: 0
+
+li
+    margin: 0
+    padding: 0
+
+a
+    text-decoration: none
+    color: $COLOR_TEXT
+
+    &:hover
+        color: $HOLO_BLUE_ACTIVE
+
 // Header
 [role=banner]
     +clearfix
-    +background(radial-gradient(50% 50%, 300px 200px, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.15) 100%), image_url('bgpattern.png'))
+
+    a
+        color: $COLOR_TEXT
+
+        &:hover
+            color: $HOLO_BLUE_ACTIVE
+
+    .logo
+        float: left
+        line-height: 48px
+        height: 48px
+        width: $MENU_WIDTH
+
+        padding-right: 1em
+        // TODO: resp
+        border-right: 1px solid $COLOR_BORDER
+
+        picture
+            display: inline-block
+            width: 48px
+            height: 48px
+            +image-2x('logo.png', 48px, 48px)
+
+        span
+            vertical-align: top
+            margin-left: 1em
+            letter-spacing: 0.2
 
     .content
-        margin: 0 auto
-        padding: 2em 0
-        overflow: hidden
-
-        +tablet-portrait-and-below
-            text-align: center
-
-    .avatar
-        border-radius: 128px
-        display: inline-block
-        width: 128px
-        height: 128px
-
-        +tablet-portrait-and-up
-            float: left
-
-        +image-2x('avatar.png', 128px, 128px)
-        +box-shadow(0 0 30px transparentize(black, 0.5) inset)
-
-    hgroup
-        color: $COLOR_BRIGHT
-        text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3)
-
-        +tablet-portrait-and-up
-            width: 25em
-            float: right
-
-    h2
-        font-style: italic
-
-.content
-    font-size: $CONTENT_FONT_SIZE
-
-    +tablet-portrait-and-up
         width: $CONTENT_MAX_WIDTH
+        padding: 1em 0
+        border-bottom: 1px solid $HOLO_BLUE
 
-    +tablet-portrait-and-below
-        width: 100%
+[role=navigation]
+    line-height: 48px
+    overflow: hidden
 
-    margin: 2em auto
+    ul
+        float: left
+        margin: 0
+        padding: 0
+
+    li
+        display: inline-block
+        margin-left: 1em
+
+        &.active a
+            color: $HOLO_BLUE
+
+#main
+    margin-top: 1em
+    margin-left: $MENU_WIDTH
+
+    .content
+        padding-left: 1em
+
+
+    a
+        color: $HOLO_BLUE
+
+[role=main]
+    min-height: 480px
+
+[role=contentinfo]
+    color: $COLOR_TEXT_LIGHT
+
+    p
+        margin: 0.25em 0 0 0
+
+    ul
+        list-style: none
+
+    li
+        font-size: smaller
+        display: inline-block
+
+        &:before
+            margin-right: 3px
+            content: '|'
+
+        &:first-child:before
+            margin-right: 0
+            content: ''
+
+    .inner
+        border-top: 1px solid $COLOR_BORDER
+
+.menu
+    margin-top: 1em
+    width: $MENU_WIDTH
+    float: left
+
+    ul
+        list-style: none
+
+    li
+        line-height: 2em
+
+    .header
+        > a
+            display: inline-block
+            font-weight: 700
+            padding: 0 10px
+
+        &.active
+            background: $COLOR_HIGHLIGHT
+
+            ul
+                background: $COLOR_BOX
+
+            > a
+                color: $HOLO_BLUE
+
+        li
+            padding: 0 10px
+
+            &:first-child
+                border-top: 1px solid $COLOR_BG
