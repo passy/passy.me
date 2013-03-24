@@ -10,6 +10,10 @@ $CONTENT_FONT_SIZE: 103%
 
 $COLOR_BRIGHT: #fefefe
 
+html
+    -webkit-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%
+
 body
     background: $COLOR_BRIGHT
     +image-2x('white_wall_hash.png', 500px, 500px)
@@ -39,12 +43,17 @@ h2, h3, h4
         padding: 2em 0
         overflow: hidden
 
+        +tablet-portrait-and-below
+            text-align: center
+
     .avatar
         border-radius: 128px
-        display: block
+        display: inline-block
         width: 128px
         height: 128px
-        float: left
+
+        +tablet-portrait-and-up
+            float: left
 
         +image-2x('avatar.png', 128px, 128px)
         +box-shadow(0 0 30px transparentize(black, 0.5) inset)
@@ -52,13 +61,21 @@ h2, h3, h4
     hgroup
         color: $COLOR_BRIGHT
         text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3)
-        width: 25em
-        float: right
+
+        +tablet-portrait-and-up
+            width: 25em
+            float: right
 
     h2
         font-style: italic
 
 .content
     font-size: $CONTENT_FONT_SIZE
-    width: $CONTENT_MAX_WIDTH
+
+    +tablet-portrait-and-up
+        width: $CONTENT_MAX_WIDTH
+
+    +tablet-portrait-and-below
+        width: 100%
+
     margin: 2em auto
