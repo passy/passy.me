@@ -19,11 +19,11 @@ html(lang='en')
         .content
 
           a.nolink.logo(href='/', title='passy.me')
-            picture
+            .icon
             span passy.me
 
           nav(role='navigation')
-            ul
+            ul.main-menu
               li.active
                 a(href='/about') About
 
@@ -32,6 +32,20 @@ html(lang='en')
 
               li
                 a(href='/blog') Blog
+
+            div.overflow(href='#')
+              span.icon
+
+            div.overflow-menu
+              div.top
+              div.mid
+                ul
+                  li
+                    a(href='/about') About
+
+                  li
+                    a(href='/changelog') Changelog
+              div.bottom
 
       aside.menu
         ul

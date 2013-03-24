@@ -1,15 +1,27 @@
 @import compass/css3/box-shadow
 @import compass/css3/images
-@import compass/utilities/general/clearfix
+@import compass/css3/transition
 
 @import partials/media_queries
 @import partials/image_2x
 @import colors
 
+@import "design/*.png"
+
 $CONTENT_MAX_WIDTH: 960px
 $MENU_WIDTH: 180px
 
-*
+=clearfix
+    &:after
+        content: ' '
+        display: block
+        clear: both
+
+=shadow
+    +box-shadow(0 0 5px rgba(black, 0.5))
+
+
+body > *
     box-sizing: border-box
 
 html
@@ -53,8 +65,6 @@ a
 
 // Header
 [role=banner]
-    +clearfix
-
     a
         color: $COLOR_TEXT
 
@@ -71,7 +81,7 @@ a
         // TODO: resp
         border-right: 1px solid $COLOR_BORDER
 
-        picture
+        .icon
             display: inline-block
             width: 48px
             height: 48px
@@ -88,20 +98,82 @@ a
         border-bottom: 1px solid $HOLO_BLUE
 
 [role=navigation]
+    +clearfix
     line-height: 48px
-    overflow: hidden
+    position: relative
 
-    ul
+    .main-menu
         float: left
         margin: 0
         padding: 0
 
-    li
-        display: inline-block
-        margin-left: 1em
+        li
+            display: inline-block
+            margin-left: 1em
 
-        &.active a
-            color: $HOLO_BLUE
+            &.active a
+                color: $HOLO_BLUE
+
+    .overflow
+        position: absolute
+        right: 8px
+        top: design-sprite-height('icon_more') - (48px / 2)
+        display: block
+
+        &:hover
+            +shadow
+
+        .icon
+            +design-sprite('icon_more')
+            display: block
+            width: design-sprite-width('icon_more')
+            height: design-sprite-height('icon_more')
+            position: relative
+
+            &:hover
+                background-color: white
+                z-index: 5
+
+    .overflow-menu
+        +transition-timing-function(ease)
+        +transition-property(opacity, height)
+        +transition-duration(0)
+
+        position: absolute
+        right: 0
+        opacity: 0
+        height: 48px
+        width: 48px
+        // Important, does trigger unfold otherwise when hidden
+        overflow: hidden
+
+        &:hover
+            +transition-duration(0.25s)
+            opacity: 1
+            // Hard-coded for animations. :(
+            height: 141px
+            width: design-sprite-width('more_mid')
+
+        ul
+            list-style: none
+
+        a
+            display: block
+
+        .top
+            +design-sprite('more_top')
+            width: design-sprite-width('more_top')
+            height: design-sprite-height('more_top')
+
+        .mid
+            background: image_url('design/more_mid.png') repeat-y
+            padding: 0 1em
+
+        .bottom
+            +design-sprite('more_bottom')
+            width: design-sprite-width('more_bottom')
+            height: design-sprite-height('more_bottom')
+
 
 #main
     margin-top: 1em
@@ -152,9 +224,11 @@ a
     li
         line-height: 2em
 
+    a
+        display: block
+
     .header
         > a
-            display: inline-block
             font-weight: 700
             padding: 0 10px
 
