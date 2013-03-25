@@ -34,8 +34,9 @@ body
     font-family: Roboto, Helvetica, Arial, sans-serif
     padding: 0.5em
 
-    width: $CONTENT_MAX_WIDTH
-    margin: 0 auto
+    +desktop-and-up
+        width: $CONTENT_MAX_WIDTH
+        margin: 0 auto
 
     color: $COLOR_TEXT
 
@@ -93,7 +94,9 @@ a
             letter-spacing: 0.2
 
     .content
-        width: $CONTENT_MAX_WIDTH
+        +desktop-and-up
+            width: $CONTENT_MAX_WIDTH
+
         padding: 1em 0
         border-bottom: 1px solid $HOLO_BLUE
 
