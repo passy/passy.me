@@ -157,6 +157,16 @@ a
         ul
             list-style: none
 
+        li
+            &:not(:last-child)::after
+                border-top: 1px solid $COLOR_BORDER
+                // Values are based on the images and their paddings
+                position: relative
+                left: -12px
+                width: 260px
+                content: ""
+                display: block
+
         a
             display: block
 
