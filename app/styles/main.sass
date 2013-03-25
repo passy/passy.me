@@ -74,13 +74,13 @@ a
             color: $HOLO_BLUE_ACTIVE
 
     .logo
-        float: left
+        +tablet-portrait-and-up
+            float: left
+            border-right: 1px solid $COLOR_BORDER
+
         line-height: 48px
         height: 48px
         width: $MENU_WIDTH
-
-        // TODO: resp
-        border-right: 1px solid $COLOR_BORDER
 
         .icon
             display: inline-block
@@ -106,13 +106,20 @@ a
     position: relative
 
     .main-menu
-        float: left
         margin: 0
         padding: 0
+        list-style: none
+
+        +tablet-portrait-and-up
+            float: left
 
         li
-            display: inline-block
-            margin-left: 1em
+            +tablet-portrait-and-up
+                display: inline-block
+                margin-left: 1em
+
+            +tablet-portrait-and-below
+                display: block
 
             &.active a
                 color: $HOLO_BLUE
@@ -131,11 +138,6 @@ a
             display: block
             width: design-sprite-width('icon_more')
             height: design-sprite-height('icon_more')
-            position: relative
-
-            &:hover
-                background-color: white
-                z-index: 5
 
     .overflow-menu
         +transition-timing-function(ease)
@@ -149,6 +151,7 @@ a
         width: 48px
         // Important, does trigger unfold otherwise when hidden
         overflow: hidden
+        z-index: 5
 
         &:hover
             +transition-duration(0.25s)
@@ -190,11 +193,13 @@ a
 
 #main
     margin-top: 1em
-    margin-left: $MENU_WIDTH
+
+    +tablet-landscape-and-up
+        margin-left: $MENU_WIDTH
 
     .content
-        padding-left: 1em
-
+        +tablet-landscape-and-up
+            padding-left: 1em
 
     a
         color: $HOLO_BLUE
@@ -226,10 +231,12 @@ a
     .inner
         border-top: 1px solid $COLOR_BORDER
 
-.menu
+.side-menu
     margin-top: 1em
-    width: $MENU_WIDTH
-    float: left
+
+    +tablet-portrait-and-up
+        width: $MENU_WIDTH
+        float: left
 
     ul
         list-style: none
