@@ -11,6 +11,11 @@
 
 $CONTENT_MAX_WIDTH: 960px
 $MENU_WIDTH: 180px
+$HEADER_HEIGHT: 48px
+
+=calc($property, $expression)
+    $experimental-support-for-opera: true
+    +experimental-value($property, "calc(#{$expression})")
 
 =clearfix
     &::after
@@ -78,15 +83,15 @@ a
             float: left
             border-right: 1px solid $COLOR_BORDER
 
-        line-height: 48px
-        height: 48px
+        line-height: $HEADER_HEIGHT
+        height: $HEADER_HEIGHT
         width: $MENU_WIDTH
 
         .icon
             display: inline-block
-            width: 48px
-            height: 48px
-            +image-2x('logo.png', 48px, 48px)
+            width: $HEADER_HEIGHT
+            height: $HEADER_HEIGHT
+            +image-2x('logo.png', $HEADER_HEIGHT, $HEADER_HEIGHT)
 
         span
             vertical-align: top
@@ -127,8 +132,15 @@ a
     .overflow
         position: absolute
         right: 8px
-        top: design-sprite-height('icon_more') - (48px / 2)
         display: block
+        $default-top: design-sprite-height('icon_more') - ($HEADER_HEIGHT / 2)
+
+        +tablet-portrait-and-up
+            top: $default-top
+        +tablet-portrait-and-below
+            // Approximation for crappy browsers, even though I don't really care.
+            top: $default-top - 3 * 16px
+            +calc(top, '#{$default-top} - #{$HEADER_HEIGHT} - 1em')
 
         &:hover
             +shadow
@@ -144,14 +156,19 @@ a
         +transition-property(opacity, height)
         +transition-duration(0)
 
-        position: absolute
-        right: 0
         opacity: 0
         height: 48px
         width: 48px
         // Important, does trigger unfold otherwise when hidden
         overflow: hidden
         z-index: 5
+
+        position: absolute
+        right: 0
+
+        +tablet-portrait-and-below
+            top: -3 * 16px
+            +calc(top, '-#{$HEADER_HEIGHT} - 1em')
 
         &:hover
             +transition-duration(0.25s)
