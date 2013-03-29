@@ -24,7 +24,7 @@ $HEADER_HEIGHT: 48px
         clear: both
 
 =shadow
-    +box-shadow(0 0 5px rgba(black, 0.5))
+    +box-shadow(0 0 5px rgba(black, 0.3))
 
 
 body > *
@@ -144,6 +144,7 @@ a
 
         &:hover
             +shadow
+            background: white
 
         .icon
             +design-sprite('icon_more')
@@ -165,52 +166,68 @@ a
 
         position: absolute
         right: 0
+        top: 0
+        // In order to have ::after sit here.
+        padding-top: 40px
 
         +tablet-portrait-and-below
             top: -3 * 16px
             +calc(top, '-#{$HEADER_HEIGHT} - 1em')
 
+        &::before
+            // The overlay on top of the overlay icon to
+            // overdraw the shadow
+
+            +shadow
+            position: absolute
+            content: ""
+            display: block
+            top: 8px
+            right: 0.5em
+
+            +design-sprite('icon_more_hover')
+            background-color: white
+            width: design-sprite-width('icon_more')
+            height: design-sprite-height('icon_more')
+
+        &::after
+            // Overlay over the bottom shadow
+            position: absolute
+            content: ""
+            display: block
+            // ^= Blur spread * 2
+            height: 10px
+            width: design-sprite-width('icon_more')
+
+            top: design-sprite-height('icon_more') + 5px
+            right: 0.5em
+            z-index: 10
+            background: white
+
         &:hover
             +transition-duration(0.25s)
             opacity: 1
-            // Hard-coded for animations. :(
-            height: 141px
-            width: design-sprite-width('more_mid')
+            // Hard-coded for animations. :( ul height + shadow blur
+            // If anymations to height: auto will ever be supported,
+            // I will instantly remove this.
+            height: 97px + 5px
+            width: 248px
 
         ul
             list-style: none
 
         li
-            &:not(:last-child)::after
-                border-top: 1px solid $COLOR_BORDER
-                // Values are based on the images and their paddings
-                position: relative
-                left: -12px
-                width: 260px
-                content: ""
-                display: block
+            &:not(:last-child)
+                border-bottom: 1px solid $COLOR_BORDER
 
         a
             display: block
-
-        &::before
-            display: block
-            content: ''
-            +design-sprite('more_top')
-            width: design-sprite-width('more_top')
-            height: design-sprite-height('more_top')
-
-        .inner
-            background: image_url('design/more_mid.png') repeat-y
             padding: 0 1em
 
-        &::after
-            display: block
-            content: ''
-            +design-sprite('more_bottom')
-            width: design-sprite-width('more_bottom')
-            height: design-sprite-height('more_bottom')
-
+        .inner
+            +shadow
+            background: white
+            margin: 0 0.5em 0.5em 0.5em
 
 #main
     margin-top: 1em
