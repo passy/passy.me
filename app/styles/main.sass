@@ -24,7 +24,7 @@ $HEADER_HEIGHT: 48px
         clear: both
 
 =shadow
-    +box-shadow(0 0 5px rgba(black, 0.5))
+    +box-shadow(0 0 5px rgba(black, 0.3))
 
 
 body > *
@@ -144,6 +144,7 @@ a
 
         &:hover
             +shadow
+            background: white
 
         .icon
             +design-sprite('icon_more')
@@ -155,7 +156,6 @@ a
         +transition-timing-function(ease)
         +transition-property(opacity, height)
         +transition-duration(0)
-        +box-shadow(0 0 5px rgba(0, 0, 0, 0.4))
 
         opacity: 0
         height: 48px
@@ -163,14 +163,46 @@ a
         // Important, does trigger unfold otherwise when hidden
         overflow: hidden
         z-index: 5
-        background: white
 
         position: absolute
         right: 0
+        top: 0
+        // In order to have ::after sit here.
+        padding-top: 40px
 
         +tablet-portrait-and-below
             top: -3 * 16px
             +calc(top, '-#{$HEADER_HEIGHT} - 1em')
+
+        &::before
+            // The overlay on top of the overlay icon to
+            // overdraw the shadow
+
+            +shadow
+            position: absolute
+            content: ""
+            display: block
+            top: 8px
+            right: 0.5em
+
+            +design-sprite('icon_more_hover')
+            background-color: white
+            width: design-sprite-width('icon_more')
+            height: design-sprite-height('icon_more')
+
+        &::after
+            // Overlay over the bottom shadow
+            position: absolute
+            content: ""
+            display: block
+            // ^= Blur spread * 2
+            height: 10px
+            width: design-sprite-width('icon_more')
+
+            top: design-sprite-height('icon_more') + 5px
+            right: 0.5em
+            z-index: 10
+            background: white
 
         &:hover
             +transition-duration(0.25s)
@@ -195,6 +227,11 @@ a
         a
             display: block
             padding: 0 1em
+
+        .inner
+            +shadow
+            background: white
+            margin: 0 0.5em 0.5em 0.5em
 
 #main
     margin-top: 1em
