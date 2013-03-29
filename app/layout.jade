@@ -47,25 +47,7 @@ html(lang='en')
                     a(href='/changelog') Changelog
 
       aside.side-menu
-        ul
-          li.header.expandable.expanded.active
-            a(href='#') Getting Started
-
-            ul
-              li
-                a(href='#') Creative Vision
-              li
-                a(href='#') Creative Vision
-              li
-                a(href='#') Creative Vision
-              li
-                a(href='#') Creative Vision
-
-          li.header.expandable
-            a(href='#') Style
-
-          li.header
-            a(href='#') Other Point
+        block menu
 
       section#main
         div(role='main')

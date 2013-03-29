@@ -1,7 +1,33 @@
 extends layout
 
-block styles
-    link(rel='stylesheet', href='styles/pages/index.css')
+block menu
+    ul
+        li.header.expandable.expanded.active
+            a(href='#') Pascal Hartig
+
+            ul
+                li
+                    a(href='#about') About
+                li
+                    a(href='#') Social
 
 block content
-    include partials/_index.jade
+    .content.menu#s-index
+        a(name='about')
+        .saying-hi
+            img.me(src='images/passy.jpg', alt='Pascal Hartig')
+            hgroup
+                h1 Hi, I'm Pascal Hartig.
+                h2
+                    | I'm a Software Engineer at weluse <span class="superamp">&amp;</span>
+                    | Open Source Maniac.
+
+        h2 Social
+        a(name='social')
+        ul.social
+            li
+                a.github(href='https://github.com/passy')
+            li
+                a.twitter(href='https://twitter.com/passy')
+            li
+                a.gplus(href='http://gplus.to/passy')

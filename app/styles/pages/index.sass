@@ -1,2 +1,54 @@
 // Styles just for the index page.
 // Could be inlined.
+
+@import compass/css3
+
+// Namespaced for the site.
+#s-index
+    .me
+        +border-radius(50%)
+        +box-shadow(0 0 5px $COLOR_BORDER)
+        width: 40%
+        display: inline-block
+
+    .saying-hi
+        padding-bottom: 1em
+        margin-bottom: 1em
+
+        hgroup
+            display: inline-block
+            width: 40%
+            // Tried my look with flexbox, but centering there
+            // is messed up atm.
+            margin:
+                top: 5%
+                left: 5%
+
+            vertical-align: top
+
+    .social
+        margin-top: 1em
+        list-style-type: none
+        text-align: center
+
+        a
+            display: block
+            width: 4em
+            height: 4em
+            background: #ccc
+
+        li
+            display: inline-block
+            padding-right: 1em
+
+        .github
+            +design-sprite('github')
+            background-color: #4183C4
+
+        .gplus
+            +design-sprite('gplus')
+            background-color: #D14836
+
+        .twitter
+            +design-sprite('twitter')
+            background-color: #39A9E0
