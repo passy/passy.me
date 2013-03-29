@@ -109,13 +109,18 @@ a
         +desktop-and-up
             width: $CONTENT_MAX_WIDTH
 
-        padding: 1em 0
+        +tablet-portrait-and-up
+            padding: 1em 0
+
         border-bottom: 1px solid $HOLO_BLUE
 
 [role=navigation]
     +clearfix
     line-height: 48px
     position: relative
+
+    a
+        display: block
 
     .main-menu
         margin: 0
@@ -132,6 +137,13 @@ a
 
             +tablet-portrait-and-below
                 display: block
+                text-align: center
+
+                &:first-child a
+                    border-top: none
+
+                a
+                    border-top: 1px solid $COLOR_BORDER
 
             &.active a
                 color: $HOLO_BLUE
@@ -228,7 +240,6 @@ a
                 border-bottom: 1px solid $COLOR_BORDER
 
         a
-            display: block
             padding: 0 1em
 
         .inner
