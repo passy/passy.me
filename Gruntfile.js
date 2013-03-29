@@ -280,7 +280,6 @@ module.exports = function (grunt) {
             'jade',
             'livereload-start',
             'connect:livereload',
-            'open',
             'watch'
         ]);
     });

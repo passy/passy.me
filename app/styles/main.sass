@@ -86,15 +86,19 @@ a
             float: left
             border-right: 1px solid $COLOR_BORDER
 
+        // Stay on top of menu
+        position: relative
+        z-index: 5
+
         line-height: $HEADER_HEIGHT
         height: $HEADER_HEIGHT
         width: $MENU_WIDTH
 
         .icon
             display: inline-block
-            width: $HEADER_HEIGHT
-            height: $HEADER_HEIGHT
-            +image-2x('logo.png', $HEADER_HEIGHT, $HEADER_HEIGHT)
+            +design-sprite('logo')
+            width: design-sprite-width('logo')
+            height: design-sprite-height('logo')
 
         span
             vertical-align: top
