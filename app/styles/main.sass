@@ -37,10 +37,13 @@ html
 body
     background: $COLOR_BG
     font-family: Roboto, Helvetica, Arial, sans-serif
-    padding: 0.5em
+    padding: 0 0.5em 0.5em 0.5em
+    max-width: $CONTENT_MAX_WIDTH
+
+    +desktop-and-below
+        margin: 0
 
     +desktop-and-up
-        width: $CONTENT_MAX_WIDTH
         margin: 0 auto
 
     color: $COLOR_TEXT
