@@ -155,6 +155,7 @@ a
         +transition-timing-function(ease)
         +transition-property(opacity, height)
         +transition-duration(0)
+        +box-shadow(0 0 5px rgba(0, 0, 0, 0.4))
 
         opacity: 0
         height: 48px
@@ -162,6 +163,7 @@ a
         // Important, does trigger unfold otherwise when hidden
         overflow: hidden
         z-index: 5
+        background: white
 
         position: absolute
         right: 0
@@ -174,8 +176,8 @@ a
             +transition-duration(0.25s)
             opacity: 1
             // Hard-coded for animations. :(
-            height: 141px
-            width: design-sprite-width('more_mid')
+            height: 97px
+            width: 248px
 
         ul
             list-style: none
@@ -192,25 +194,7 @@ a
 
         a
             display: block
-
-        &::before
-            display: block
-            content: ''
-            +design-sprite('more_top')
-            width: design-sprite-width('more_top')
-            height: design-sprite-height('more_top')
-
-        .inner
-            background: image_url('design/more_mid.png') repeat-y
             padding: 0 1em
-
-        &::after
-            display: block
-            content: ''
-            +design-sprite('more_bottom')
-            width: design-sprite-width('more_bottom')
-            height: design-sprite-height('more_bottom')
-
 
 #main
     margin-top: 1em
