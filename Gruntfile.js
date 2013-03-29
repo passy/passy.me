@@ -230,7 +230,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= yeoman.app %>',
                     dest: '.tmp',
-                    src: '*.jade',
+                    src: '{,*/}*.jade',
                     ext: '.html'
                 }]
             }
@@ -248,6 +248,13 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/*'
+                    ]
+                }, {
+                    expand: true,
+                    cwd: '.tmp',
+                    dest: '<%= yeoman.dist %>',
+                    src: [
+                        '{,*/}*.html'
                     ]
                 }]
             }
