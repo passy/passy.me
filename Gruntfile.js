@@ -177,6 +177,12 @@ module.exports = function (grunt) {
                     cwd: '<%= yeoman.app %>/images',
                     src: '{,*/}*.{png,jpg,jpeg}',
                     dest: '<%= yeoman.dist %>/images'
+                }, {
+                    // Copy sprites
+                    expand: true,
+                    cwd: '.tmp/images',
+                    src: '{,*/}*.png',
+                    dest: '<%= yeoman.dist %>/images'
                 }]
             }
         },
