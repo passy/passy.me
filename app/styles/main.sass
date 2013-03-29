@@ -193,16 +193,20 @@ a
         a
             display: block
 
-        .top
+        &::before
+            display: block
+            content: ''
             +design-sprite('more_top')
             width: design-sprite-width('more_top')
             height: design-sprite-height('more_top')
 
-        .mid
+        .inner
             background: image_url('design/more_mid.png') repeat-y
             padding: 0 1em
 
-        .bottom
+        &::after
+            display: block
+            content: ''
             +design-sprite('more_bottom')
             width: design-sprite-width('more_bottom')
             height: design-sprite-height('more_bottom')
