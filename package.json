@@ -24,7 +24,8 @@
     "grunt-open": "~0.2.0",
     "grunt-svgmin": "0.1.0",
     "matchdep": "~0.1.1",
-    "grunt-contrib-jade": "~0.5.0"
+    "grunt-contrib-jade": "~0.5.0",
+    "marked": "~0.2.8"
   },
   "engines": {
     "node": ">=0.8.0"
