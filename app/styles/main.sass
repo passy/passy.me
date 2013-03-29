@@ -207,22 +207,16 @@ a
         &:hover
             +transition-duration(0.25s)
             opacity: 1
-            // Hard-coded for animations. :(
-            height: 97px
+            // Hard-coded for animations. :( ul height + shadow blur
+            height: 97px + 5px
             width: 248px
 
         ul
             list-style: none
 
         li
-            &:not(:last-child)::after
-                border-top: 1px solid $COLOR_BORDER
-                // Values are based on the images and their paddings
-                position: relative
-                left: -12px
-                width: 260px
-                content: ""
-                display: block
+            &:not(:last-child)
+                border-bottom: 1px solid $COLOR_BORDER
 
         a
             display: block
