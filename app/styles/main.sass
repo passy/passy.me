@@ -82,8 +82,10 @@ a
             color: $HOLO_BLUE_ACTIVE
 
     .logo
-        +tablet-portrait-and-up
+        +mobile-portrait-and-up
             float: left
+
+        +tablet-landscape-and-up
             border-right: 1px solid $COLOR_BORDER
 
         // Stay on top of menu
@@ -127,17 +129,15 @@ a
         padding: 0
         list-style: none
 
-        +tablet-portrait-and-up
-            float: left
-
         li
-            +tablet-portrait-and-up
+            +mobile-portrait-and-up
                 display: inline-block
                 margin-left: 1em
 
-            +tablet-portrait-and-below
+            +mobile-menu-and-below
                 display: block
                 text-align: center
+                clear: both
 
                 &:first-child a
                     border-top: none
@@ -154,9 +154,9 @@ a
         display: block
         $default-top: design-sprite-height('icon_more') - ($HEADER_HEIGHT / 2)
 
-        +tablet-portrait-and-up
+        +mobile-portrait-and-up
             top: $default-top
-        +tablet-portrait-and-below
+        +mobile-portrait-and-below
             // Approximation for crappy browsers, even though I don't really care.
             top: $default-top - 3 * 16px
             +calc(top, '#{$default-top} - #{$HEADER_HEIGHT} - 1em')

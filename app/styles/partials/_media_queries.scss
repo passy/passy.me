@@ -2,6 +2,7 @@
 
 
 $mq-mobile-portrait: 20em !default;
+$mq-mobile-menu: 28em !default;
 $mq-mobile-landscape: 30em !default;
 $mq-tablet-portrait: 40em !default;
 $mq-tablet-landscape: 64em !default;
@@ -25,6 +26,13 @@ $mq-desktop: 86.375em !default;
 // Everything up to and including the mobile portrait
 @mixin mobile-portrait-and-below {
     @media (max-width : $mq-mobile-portrait) {
+        @content;
+    }
+}
+
+// Everything up to and including the mobile portrait
+@mixin mobile-menu-and-below {
+    @media (max-width : $mq-mobile-menu) {
         @content;
     }
 }
