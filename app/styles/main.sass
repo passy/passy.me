@@ -133,14 +133,16 @@ a
         list-style: none
 
         li
+            margin-left: 1em
+
             +mobile-portrait-and-up
                 display: inline-block
-                margin-left: 1em
 
             +mobile-menu-and-below
                 display: block
                 text-align: center
                 clear: both
+                margin-left: 0
 
                 &:first-child a
                     border-top: none
@@ -190,19 +192,7 @@ a
     .inner
         border-top: 1px solid $COLOR_BORDER
 
-.superamp
-    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', Georgia, serif
-    font-style: italic
-    font-weight: normal
-
-.prose
-    +column-width(15em)
-    margin-top: 1em
-
-    p
-        margin-top: 0
-
-.side-menu
+[role=complementary]
     margin-top: 1em
 
     +tablet-portrait-and-up
@@ -257,5 +247,17 @@ a
 
             &:first-child
                 border-top: 1px solid $COLOR_BG
+
+.superamp
+    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', Georgia, serif
+    font-style: italic
+    font-weight: normal
+
+.prose
+    +column-width(15em)
+    margin-top: 1em
+
+    p
+        margin-top: 0
 
 @import pages/index
