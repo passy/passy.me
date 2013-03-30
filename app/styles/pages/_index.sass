@@ -3,6 +3,14 @@
 
 @import compass/css3
 
+=social-link($name, $color)
+    .#{$name}
+        +design-sprite($name)
+        background-color: $color
+
+        &:hover
+            background-color: lighten($color, 10%)
+
 // Namespaced for the site.
 #s-index
     .me
@@ -41,14 +49,6 @@
             display: inline-block
             padding-right: 1em
 
-        .github
-            +design-sprite('github')
-            background-color: #4183C4
-
-        .gplus
-            +design-sprite('gplus')
-            background-color: #D14836
-
-        .twitter
-            +design-sprite('twitter')
-            background-color: #39A9E0
+        +social-link('github', #4183C4)
+        +social-link('gplus', #D14836)
+        +social-link('twitter', #39A9E0)
