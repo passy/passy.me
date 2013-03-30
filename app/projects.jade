@@ -4,34 +4,35 @@ block vars
     - var title = 'Projects'
     - var active = 'projects'
 
-block menu
-    ul
-        li.header.expandable.expanded.active
-            a(href='#') Code
+block prepend content
+    aside(role='complementary')
+        ul
+            li.header.expandable.expanded.active
+                a(href='#') Code
 
-            ul
-                li
-                    a(href='#code-android') Android
-                li
-                    a(href='#code-web') Web
-                li
-                    a(href='#code-lowlevel') Low Level
+                ul
+                    li
+                        a(href='#code-android') Android
+                    li
+                        a(href='#code-web') Web
+                    li
+                        a(href='#code-lowlevel') Low Level
 
-        li.header.expandable.active
-            a(href='#') Writing
+            li.header.expandable.active
+                a(href='#') Writing
 
-            ul
-                li
-                    a(href='#writing-tp') Transfer Projects
+                ul
+                    li
+                        a(href='#writing-tp') Transfer Projects
 
-                li
-                    a(href='#writing-thesis') Thesis
+                    li
+                        a(href='#writing-thesis') Thesis
 
-block content
-    .content.menu#s-projects
-        h1 Projects
-        p
-            | You'll see some projects of me here soonish. In the mean time,
-            | enjoy this furious kitten.
+    section(role='main')
+        .content.menu#s-projects
+            h1 Projects
+            p
+                | You'll see some projects of me here soonish. In the mean time,
+                | enjoy this furious kitten.
 
-        img(src='http://i.imgur.com/SvNNJBA.jpg', alt='Furious kitten is furious.', height='400px')
+            img(src='http://i.imgur.com/SvNNJBA.jpg', alt='Furious kitten is furious.', height='400px')

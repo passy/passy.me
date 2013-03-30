@@ -4,13 +4,14 @@ block vars
     - var title = 'Impress'
     - var active = 'impress'
 
-block content
-    .content#s-projects
-        h1 Impress
+block prepend content
+    section(role='main')
+        .content#s-projects
+            h1 Impress
 
-        address
-            | Pascal Hartig<br>
-            | Westring 331<br>
-            | 24118 Kiel<br>
+            address
+                | Pascal Hartig<br>
+                | Westring 331<br>
+                | 24118 Kiel<br>
 
-            a(href='mailto:phartig@rdrei.net') phartig@rdrei.net
+                a(href='mailto:phartig@rdrei.net') phartig@rdrei.net

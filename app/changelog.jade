@@ -4,11 +4,12 @@ block vars
     - var title = 'Changelog'
     - var active = 'changelog'
 
-block content
-    .content#s-changelog
-        :markdown
-            # Changelog
+block prepend content
+    section(role='main')
+        .content#s-changelog
+            :markdown
+                # Changelog
 
-            ## v0.0.0 (TBA)
+                ## v0.0.0 (TBA)
 
-            - Still figuring this all out.
+                - Still figuring this all out.
