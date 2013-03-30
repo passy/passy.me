@@ -12,7 +12,7 @@ mixin menu-entry(href, slug, title)
       a(href=href)= title
 
 
-html(lang='en')
+html(lang='en', ng-app='passy')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
@@ -24,7 +24,7 @@ html(lang='en')
     block styles
     link(rel='author', href='/humans.txt')
 
-  body(ng-app)
+  body
     .container
       header(role='banner')
         .content
@@ -87,4 +87,5 @@ html(lang='en')
     // build:js(app) scripts/main.js
     script(src='components/angular/angular.js')
     script(src='scripts/main.js')
+    script(src='scripts/controllers/projects.js')
     // endbuild
