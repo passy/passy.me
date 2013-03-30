@@ -23,7 +23,8 @@ html(lang='en')
     link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:300,400,700')
     block styles
     link(rel='author', href='/humans.txt')
-  body
+
+  body(ng-app)
     .container
       header(role='banner')
         .content
@@ -58,9 +59,8 @@ html(lang='en')
       aside.side-menu
         block menu
 
-      section#main
-        div(role='main')
-          block content
+      section(role='main')
+        block content
 
         footer(role='contentinfo').content
           .inner
