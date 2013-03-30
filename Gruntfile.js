@@ -266,6 +266,22 @@ module.exports = function (grunt) {
                     ]
                 }]
             }
+        },
+        shell: {
+            commitDist: {
+                command: 'git add -A && git commit -m "gh-pages update"',
+                options: {
+                    stdout: true,
+                    execOptions: {cwd: 'dist'}
+                }
+            },
+            pushDist: {
+                command: 'git push origin gh-pages',
+                options: {
+                    stdout: true,
+                    execOptions: {cwd: 'dist'}
+                }
+            },
         }
     });
 
@@ -313,5 +329,11 @@ module.exports = function (grunt) {
         'jshint',
         'test',
         'build'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'default',
+        'shell:commitDist',
+        'shell:pushDist'
     ]);
 };
