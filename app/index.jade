@@ -1,42 +1,4 @@
 extends layout
 
 block prepend content
-    section(role='main')
-        #s-index
-            a(name='intro')
-            .saying-hi
-                img.me(src='images/passy.jpg', alt='Pascal Hartig')
-                hgroup
-                    h1 Hi, I'm Pascal Hartig.
-                    h2
-                        | I'm a Software Engineer at weluse <span class="superamp">&amp;</span>
-                        | Open Source Addict.
-
-            a(name='social')
-            ul.social
-                li
-                    a.github(href='https://github.com/passy')
-                li
-                    a.twitter(href='https://twitter.com/passy')
-                li
-                    a.gplus(href='http://gplus.to/passy')
-
-            a(name='about')
-            article.prose
-                p
-                    | I'm Pascal and I love building stuff. My favorite platforms
-                    | for doing that are the web and mobile. On mobile my prefered
-                    | environment is Android, which I built several native apps for.
-                    | On the web, I like to use whatever is hip and trendy at the
-                    | moment, but I always get back to my favorite language Python
-                    | for the work behind the scenes.
-
-                p
-                    | I spend a lot of my free time doing Open Source. Two of my
-                    | favorite projects I am working on are <a
-                    | href="http://todomvc.com">TodoMVC</a>, a learning resource
-                    | helping you select the right MV* framework, and <a
-                    | href="http://yeoman.io">Yeoman</a>, a modern workflow for
-                    | modern webapps. I'm also taking care of some of my own
-                    | projects and those we open-sourced at <a
-                    | href="https://weluse.de/">weluse</a>.
+    include pages/index
