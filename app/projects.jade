@@ -4,8 +4,31 @@ block vars
     - var title = 'Projects'
     - var active = 'projects'
 
+block menu
+    ul
+        li.header.expandable.expanded.active
+            a(href='#') Code
+
+            ul
+                li
+                    a(href='#code-android') Android
+                li
+                    a(href='#code-web') Web
+                li
+                    a(href='#code-lowlevel') Low Level
+
+        li.header.expandable.active
+            a(href='#') Writing
+
+            ul
+                li
+                    a(href='#writing-tp') Transfer Projects
+
+                li
+                    a(href='#writing-thesis') Thesis
+
 block content
-    .content#s-projects
+    .content.menu#s-projects
         h1 Projects
         p
             | You'll see some projects of me here soonish. In the mean time,
