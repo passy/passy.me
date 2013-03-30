@@ -1,4 +1,4 @@
-=overflow-menu
+=overflow-menu($items)
     .overflow
         position: absolute
         right: 8px
@@ -82,10 +82,14 @@
         &:hover
             +transition-duration(0.25s)
             opacity: 1
-            // Hard-coded for animations. :( ul height + shadow blur
+            // Hard-coded for animations. :(
             // If anymations to height: auto will ever be supported,
             // I will instantly remove this.
-            height: 97px + 5px
+
+            // Every item is 1em + 1em padding top and bottom +
+            // 1px border for all but the last items + 5px shadow blur
+            // radius.
+            height: $items * (16px * 3) + ($items - 1) + 5px
             width: 248px
 
         ul
