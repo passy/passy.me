@@ -2,6 +2,7 @@
 @import compass/css3/images
 @import compass/css3/transition
 @import compass/css3/transform
+@import compass/css3/columns
 
 @import partials/media-queries
 @import partials/image-2x
@@ -195,6 +196,13 @@ a
     font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', Georgia, serif
     font-style: italic
     font-weight: normal
+
+.prose
+    +column-width(15em)
+    margin-top: 1em
+
+    p
+        margin-top: 0
 
 .side-menu
     margin-top: 1em

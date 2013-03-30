@@ -7,6 +7,8 @@
     .#{$name}
         +design-sprite($name)
         background-color: $color
+        +transition
+        +transition-property(background-color)
 
         &:hover
             background-color: lighten($color, 10%)
@@ -22,6 +24,10 @@
     .saying-hi
         padding-bottom: 1em
         margin-bottom: 1em
+
+        +tablet-portrait-and-up
+            // Looks a bit of the grid otherweise.
+            margin-left: -1em
 
         hgroup
             display: inline-block
