@@ -254,7 +254,8 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/*',
-                        'CNAME'
+                        'CNAME',
+                        '.nojekyll'
                     ]
                 }, {
                     expand: true,
