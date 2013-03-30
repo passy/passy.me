@@ -7,6 +7,7 @@
 
         +mobile-portrait-and-up
             top: $default-top
+
         +mobile-portrait-and-below
             // Approximation for crappy browsers, even though I don't really care.
             top: $default-top - 3 * 16px
@@ -40,7 +41,11 @@
         // In order to have ::after sit here.
         padding-top: 40px
 
-        +tablet-portrait-and-below
+        @media only screen and (max-width : $mq-tablet-portrait + .001) and (min-width : $mq-mobile-menu)
+            top: -2 * 16px
+            +calc(top, '-#{$HEADER_HEIGHT} + 3em')
+
+        +mobile-portrait-and-below
             top: -3 * 16px
             +calc(top, '-#{$HEADER_HEIGHT} - 1em')
 
