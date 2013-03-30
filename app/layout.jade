@@ -23,10 +23,6 @@ html(lang='en')
     link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:300,400,700')
     block styles
     link(rel='author', href='/humans.txt')
-
-    // build:js scripts/vendor/modernizr.js
-    script(src='components/modernizr/modernizr.js')
-    // endbuild
   body
     .container
       header(role='banner')
@@ -93,7 +89,7 @@ html(lang='en')
       ga('create', 'UA-587894-17', 'passy.me');
       ga('send', 'pageview');
 
-    // build:js scripts/main.js
-    script(src='components/jquery/jquery.js')
+    // build:js(app) scripts/main.js
+    script(src='components/angular/angular.js')
     script(src='scripts/main.js')
     // endbuild
