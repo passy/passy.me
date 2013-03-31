@@ -1,4 +1,5 @@
 extends layout
 
-block prepend content
-    include pages/index
+block content
+    div(ng-view)
+        include pages/index

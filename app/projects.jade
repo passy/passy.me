@@ -4,5 +4,6 @@ block vars
     - var title = 'Projects'
     - var active = 'projects'
 
-block prepend content
-    include pages/projects
+block content
+    div(ng-view)
+        include pages/projects
