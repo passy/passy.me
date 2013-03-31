@@ -26,9 +26,62 @@ div(ng-controller='ProjectsCtrl')
         .content.menu#s-projects
             h1 Projects
 
+            h2(name='android') Android
             ul.elements(passy-isotope)
-                li Hello
-                li World
-                li AngularJS
-                li Is
-                li Awesome
+                li.medium(style='background-image: url(images/projects/scdl.jpg)')
+                    header Downloader for SoundCloud
+                    .inner
+                        p.description
+                            | An Android app that allows you to download songs
+                            | from SoundCloud with more than 300 000 downloads and
+                            | counting.
+                        footer
+                            a.gplay(href='https://play.google.com/store/apps/details?id=net.rdrei.android.scdl2')
+                                | Download from Google Play
+
+                li.small(style='background-image: url(images/projects/scdl.jpg)')
+                    header WAKiMail
+                    .inner
+                        p.description
+                            | An email client for my university's bugged
+                            | messaging platform.
+                        footer
+                            a.gplay(href='https://play.google.com/store/apps/details?id=net.rdrei.android.wakimail')
+                                | Download from Google Play
+                            a.github(href='https://github.com/passy/wakimail')
+                                | Fork on Github
+
+                li.small(style='background-image: url(images/projects/scdl.jpg)')
+                    header SimCity Server Status
+                    .inner
+                        p.description
+                            | An apps that tells you whether SimCity 2013 is
+                            | playable or not.
+                        footer
+                            a.gplay(href='https://play.google.com/store/apps/details?id=net.rdrei.android.simstatus')
+                                | Download from Google Play
+
+                li.medium(style='background-image: url(images/projects/scdl.jpg)')
+                    header Android-DirectoryChooser
+                    .inner
+                        p.description
+                            | A library for Android that lets you implement a
+                            | directory chooser with ease.
+                        footer
+                            a.gplay(href='https://play.google.com/store/apps/details?id=net.rdrei.android.dirchooser.sample')
+                                | Download from Google Play
+                            a.github(href='https://github.com/passy/Android-DirectoryChooser')
+                                | Fork on Github
+
+                li.small(style='background-image: url(images/projects/scdl.jpg)')
+                    header White Rabbit
+                    .inner
+                        p.description
+                            | A team effort at <a | href="https://weluse.de/">weluse</a>
+                            | that lets you share your current position via mail
+                            | or SMS.
+                        footer
+                            a.gplay(href='https://play.google.com/store/apps/details?id=de.weluse.android.whiterabbit')
+                                | Download from Google Play
+
+            h2(name='web') Web
