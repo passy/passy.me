@@ -6,10 +6,10 @@ block vars
 mixin menu-entry(href, slug, title)
   - if (slug == active)
     li.active
-      a(href=href)= title
+      a(href=href, passy-menu)= title
   - else
     li
-      a(href=href)= title
+      a(href=href, passy-menu)= title
 
 
 html(lang='en', ng-app='passy')
@@ -89,4 +89,5 @@ html(lang='en', ng-app='passy')
     script(src='components/angular/angular.js')
     script(src='scripts/main.js')
     script(src='scripts/controllers/projects.js')
+    script(src='scripts/directives/menu.js')
     // endbuild
