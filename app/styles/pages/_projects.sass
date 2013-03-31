@@ -5,7 +5,7 @@
         li
             display: block
             float: left
-            width: 15em
+            width: 10em
             height: 10em
 
             background: $COLOR_BOX
@@ -15,6 +15,10 @@
 
             background-position: 50% 50%
             background-repeat: no-repeat
+            background-size: cover
+
+            +mobile-menu-and-below
+                width: 100% !important
 
             footer
                 a
@@ -33,7 +37,7 @@
 
             &.large
                 width: 22em
-                height: 20em
+                height: 18em
                 background-position: left
                 background-size: contain
 
@@ -51,7 +55,7 @@
             left: 0
             height: 3em
             color: white
-            background: rgba(0, 0, 0, 0.8)
+            background: rgba(0, 0, 0, 0.6)
             width: 100%
 
             text-align: center

@@ -13,7 +13,7 @@ div(ng-controller='ProjectsCtrl')
                         a(href='#code-lowlevel') Low Level
 
             li.header.expandable
-                a(href='#') Writing
+                a(href='#') Papers
 
                 ul
                     li
@@ -26,54 +26,56 @@ div(ng-controller='ProjectsCtrl')
         .content.menu#s-projects
             h1 Projects
 
-            h2(name='android') Android
+            h2 Android
+                a(id='code-android')
+
             ul.elements(passy-isotope)
                 li.medium(style='background-image: url(images/projects/scdl.jpg)')
                     header Downloader for SoundCloud
                     .inner
                         p.description
                             | An Android app that allows you to download songs
-                            | from SoundCloud with more than 300 000 downloads and
+                            | from SoundCloud with more than 300&nbsp;000 downloads and
                             | counting.
                         footer
-                            a.gplay(href='https://play.google.com/store/apps/details?id=net.rdrei.android.scdl2')
+                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.scdl2')
                                 | Download from Google Play
 
-                li.small(style='background-image: url(images/projects/scdl.jpg)')
+                li.small(style='background-image: url(images/projects/wakimail.jpg)')
                     header WAKiMail
                     .inner
                         p.description
                             | An email client for my university's bugged
                             | messaging platform.
                         footer
-                            a.gplay(href='https://play.google.com/store/apps/details?id=net.rdrei.android.wakimail')
+                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.wakimail')
                                 | Download from Google Play
-                            a.github(href='https://github.com/passy/wakimail')
+                            a.github.holo-button(href='https://github.com/passy/wakimail')
                                 | Fork on Github
 
-                li.small(style='background-image: url(images/projects/scdl.jpg)')
+                li.small(style='background-image: url(images/projects/simstatus.jpg)')
                     header SimCity Server Status
                     .inner
                         p.description
                             | An apps that tells you whether SimCity 2013 is
                             | playable or not.
                         footer
-                            a.gplay(href='https://play.google.com/store/apps/details?id=net.rdrei.android.simstatus')
+                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.simstatus')
                                 | Download from Google Play
 
-                li.medium(style='background-image: url(images/projects/scdl.jpg)')
+                li.medium(style='background-image: url(images/projects/dirchooser.jpg)')
                     header Android-DirectoryChooser
                     .inner
                         p.description
                             | A library for Android that lets you implement a
                             | directory chooser with ease.
                         footer
-                            a.gplay(href='https://play.google.com/store/apps/details?id=net.rdrei.android.dirchooser.sample')
+                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.dirchooser.sample')
                                 | Download from Google Play
-                            a.github(href='https://github.com/passy/Android-DirectoryChooser')
+                            a.github.holo-button(href='https://github.com/passy/Android-DirectoryChooser')
                                 | Fork on Github
 
-                li.small(style='background-image: url(images/projects/scdl.jpg)')
+                li.small(style='background-image: url(images/projects/whiterabbit.jpg)')
                     header White Rabbit
                     .inner
                         p.description
@@ -81,7 +83,57 @@ div(ng-controller='ProjectsCtrl')
                             | that lets you share your current position via mail
                             | or SMS.
                         footer
-                            a.gplay(href='https://play.google.com/store/apps/details?id=de.weluse.android.whiterabbit')
+                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=de.weluse.android.whiterabbit')
                                 | Download from Google Play
 
-            h2(name='web') Web
+            h2 Web
+                a(id='code-web')
+
+            ul.elements(passy-isotope)
+                li.medium(style='background-image: url(images/projects/tastejs.jpg)')
+                    header TasteJS
+                    .inner
+                        p.description
+                            | A better JavaScript learning experience. Coming
+                            | soon.
+                        footer
+                            a.github.holo-button(href='https://github.com/tastejs')
+                                | Fork on Github
+                            a.website.holo-button(href='http://tastejs.com')
+                                | tastejs.com
+
+                li.small(style='background-image: url(images/projects/passyme.jpg)')
+                    header passy.me
+                    .inner
+                        p.description
+                            | This very website. Built with Yeoman, Jade,
+                            | Compass and tons of awesome stuff. We have to go
+                            | deeper.
+                        footer
+                            a.github.holo-button(href='https://github.com/passy/passy.me')
+                                | Fork on Github
+                            a.website.holo-button(href='http://passy.me')
+                                | passy.me
+
+                li.small(style='background-image: url(images/projects/yeoman.png)')
+                    header Yeoman
+                    .inner
+                        p.description
+                            | Modern workflow for modern webapps.
+                        footer
+                            a.github.holo-button(href='https://github.com/yeoman')
+                                | Fork on Github
+                            a.website.holo-button(href='http://yeoman.io')
+                                | yeoman.io
+
+                li.medium(style='background-image: url(images/projects/todomvc.jpg)')
+                    header TodoMVC
+                    .inner
+                        p.description
+                            | Helping you select an MV* framework with Addy
+                            | Osmani and Sindre Sorhus.
+                        footer
+                            a.github.holo-button(href='https://github.com/addyosmani/todomvc')
+                                | Fork on Github
+                            a.website.holo-button(href='http://todomvc.com')
+                                | todomvc.com

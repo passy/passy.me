@@ -4,7 +4,8 @@
     window.passy.directive('passyIsotope', ['$timeout', function ($timeout) {
         return function link(scope, element) {
             var $isotope = element.isotope({
-                itemSelector: 'li'
+                itemSelector: 'li',
+                layoutMode: 'fitRows'
             });
 
             $timeout(function () {
