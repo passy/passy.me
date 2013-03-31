@@ -1,0 +1,63 @@
+#s-projects
+    .elements
+        list-style-type: none
+
+        li
+            display: block
+            float: left
+            width: 10em
+            height: 10em
+
+            background: $COLOR_BOX
+            overflow: hidden
+            vertical-align: middle
+            margin: 0 1em 1em 0
+
+            background-position: 50% 50%
+            background-repeat: no-repeat
+            background-size: cover
+
+            +mobile-menu-and-below
+                width: 100% !important
+
+            footer
+                a
+                    display: block
+                    margin-bottom: .5em
+
+            .description
+                margin-top: 4em
+
+            .inner
+                display: none
+
+            &.medium
+                width: 18em
+                height: 15em
+
+            &.large
+                width: 22em
+                height: 18em
+                background-position: left
+                background-size: contain
+
+                .inner
+                    display: block
+                    padding-left: 55%
+                    padding-right: 1em
+
+                header
+                    top: 0
+
+        header
+            position: absolute
+            bottom: 0
+            left: 0
+            height: 3em
+            color: white
+            background: rgba(0, 0, 0, 0.6)
+            width: 100%
+
+            text-align: center
+            line-height: 3em
+            font-weight: bold

@@ -20,7 +20,7 @@ html(lang='en', ng-app='passy')
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     link(rel='stylesheet', href='styles/main.css')
-    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:300,400,700')
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:400,500,700')
     block styles
     link(rel='author', href='/humans.txt')
 
@@ -85,10 +85,14 @@ html(lang='en', ng-app='passy')
       ga('create', 'UA-587894-17', 'passy.me');
       ga('send', 'pageview');
 
+    script(src='components/jquery/jquery.js')
     script(src='components/angular/angular.js')
 
     // build:js(app) scripts/main.js
+    script(src='components/isotope/jquery.isotope.js')
+
     script(src='scripts/main.js')
     script(src='scripts/controllers/projects.js')
     script(src='scripts/directives/menu.js')
+    script(src='scripts/directives/isotope.js')
     // endbuild
