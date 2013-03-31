@@ -241,6 +241,21 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        cdnify: {
+            dist: {
+                html: ['<%= yeoman.dist %>/index.html']
+            }
+        },
+        ngmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.dist %>/scripts',
+                    src: '{,*/}*.js',
+                    dest: '<%= yeoman.dist %>/scripts'
+                }]
+            }
+        },
         // Put files not handled in other tasks here
         copy: {
             dist: {
@@ -254,6 +269,7 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/*',
+                        'components/**',
                         'CNAME',
                         '.nojekyll'
                     ]
@@ -319,9 +335,12 @@ module.exports = function (grunt) {
         'htmlmin',
         'concat',
         'cssmin',
+        // Doesn't work with my setup, have to ask @btford about this.
+        // 'ngmin',
         'uglify',
         'copy',
         'rev',
+        'cdnify',
         'usemin'
     ]);
 

@@ -1,8 +1,7 @@
-/* global passy */
 (function () {
     'use strict';
 
-    passy.directive('passyMenu', function ($location) {
+    window.passy.directive('passyMenu', ['$location', function ($location) {
         return {
             restrict: 'A',
             scope: {
@@ -20,5 +19,5 @@
                 });
             }
         };
-    });
+    }]);
 }());

@@ -2,6 +2,6 @@
 (function () {
     'use strict';
 
-    passy.controller('ProjectsCtrl', function ($scope) {
+    passy.controller('ProjectsCtrl', function () {
     });
 }());
