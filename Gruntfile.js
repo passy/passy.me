@@ -339,7 +339,8 @@ module.exports = function (grunt) {
         // 'ngmin',
         'uglify',
         'copy',
-        'rev',
+        // Doesn't work with inline styles.
+        // 'rev',
         'cdnify',
         'usemin'
     ]);
