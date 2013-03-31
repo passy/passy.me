@@ -6,13 +6,13 @@ block vars
 mixin menu-entry(href, slug, title)
   - if (slug == active)
     li.active
-      a(href=href)= title
+      a(href=href, passy-menu)= title
   - else
     li
-      a(href=href)= title
+      a(href=href, passy-menu)= title
 
 
-html(lang='en')
+html(lang='en', ng-app='passy')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
@@ -23,6 +23,7 @@ html(lang='en')
     link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:300,400,700')
     block styles
     link(rel='author', href='/humans.txt')
+
   body
     .container
       header(role='banner')
@@ -55,31 +56,26 @@ html(lang='en')
                   li
                     a(href='https://github.com/passy/passy.me') Source
 
-      aside.side-menu
-        block menu
+      block content
 
-      section#main
-        div(role='main')
-          block content
+      footer(role='contentinfo').content
+        .inner
+          small
+            p &copy; 2013 by Pascal Hartig.
+            p.
+              Except as noted, content is licensed under
+              <a href='http://creativecommons.org/licenses/by/3.0/'>Creative
+              Commons Attribution 3.0</a>.
+              Views expressed here are my own and do not reflect those of my
+              employer.
 
-        footer(role='contentinfo').content
-          .inner
-            small
-              p &copy; 2013 by Pascal Hartig.
-              p.
-                Except as noted, content is licensed under
-                <a href='http://creativecommons.org/licenses/by/3.0/'>Creative
-                Commons Attribution 3.0</a>.
-                Views expressed here are my own and do not reflect those of my
-                employer.
+          nav.footer
+            ul
+              li
+                a(href='/impress.html', target='_self') Impress
 
-            nav.footer
-              ul
-                li
-                  a(href='/impress.html') Impress
-
-                li
-                  a(href='http://creativecommons.org/licenses/by/3.0/') Content License
+              li
+                a(href='http://creativecommons.org/licenses/by/3.0/') Content License
 
     script
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -89,7 +85,10 @@ html(lang='en')
       ga('create', 'UA-587894-17', 'passy.me');
       ga('send', 'pageview');
 
-    // build:js(app) scripts/main.js
     script(src='components/angular/angular.js')
+
+    // build:js(app) scripts/main.js
     script(src='scripts/main.js')
+    script(src='scripts/controllers/projects.js')
+    script(src='scripts/directives/menu.js')
     // endbuild

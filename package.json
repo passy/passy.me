@@ -26,7 +26,9 @@
     "matchdep": "~0.1.1",
     "grunt-contrib-jade": "~0.5.0",
     "marked": "~0.2.8",
-    "grunt-shell": "~0.2.1"
+    "grunt-shell": "~0.2.1",
+    "grunt-google-cdn": "~0.1.1",
+    "grunt-ngmin": "0.0.2"
   },
   "engines": {
     "node": ">=0.8.0"
