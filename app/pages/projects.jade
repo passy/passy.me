@@ -13,7 +13,7 @@ div(ng-controller='ProjectsCtrl')
                         a(href='#code-lowlevel') Low Level
 
             li.header.expandable
-                a(href='#') Papers
+                a(href='#papers') Papers
 
                 ul
                     li
@@ -25,8 +25,10 @@ div(ng-controller='ProjectsCtrl')
     section(role='main')
         .content.menu#s-projects
             h1 Projects
+            h2 Code
+                a(id='code')
 
-            h2 Android
+            h3 Android
                 a(id='code-android')
 
             ul.elements(passy-isotope)
@@ -86,7 +88,7 @@ div(ng-controller='ProjectsCtrl')
                             a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=de.weluse.android.whiterabbit')
                                 | Download from Google Play
 
-            h2 Web
+            h3 Web
                 a(id='code-web')
 
             ul.elements(passy-isotope)
@@ -193,7 +195,7 @@ div(ng-controller='ProjectsCtrl')
                             a.github.holo-button(href='https://github.com/passy/twentiment')
                                 | Fork on Github
 
-            h2 Low Level
+            h3 Low Level
                 a(id='code-lowlevel')
 
             ul.elements(passy-isotope)
@@ -216,3 +218,8 @@ div(ng-controller='ProjectsCtrl')
                         footer
                             a.github.holo-button(href='https://github.com/passy/webscan')
                                 | Fork on Github
+
+            h2 Papers
+                a(id='papers')
+
+            em Coming soon.™
