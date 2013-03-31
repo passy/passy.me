@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="passy">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Changelog | passy.me</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="styles/de9f8012.main.css">
+    <link rel="stylesheet" href="styles/15e02100.main.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,700">
     <link rel="author" href="/humans.txt">
-    <script src="scripts/vendor/d41d8cd9.modernizr.js"></script>
   </head>
   <body>
     <div class="container">
@@ -18,8 +17,8 @@
             <div class="icon"></div><span>passy.me</span></a>
           <nav role="navigation">
             <ul class="main-menu">
-              <li><a href="/">About</a></li>
-              <li><a href="/projects.html">Projects</a></li>
+              <li><a href="/" passy-menu>About</a></li>
+              <li><a href="/projects.html" passy-menu>Projects</a></li>
               <li><a href="https://weluse.de/blog">Blog</a></li>
             </ul>
             <div href="#" class="overflow"><span class="icon"></span></div>
@@ -35,10 +34,8 @@
           </nav>
         </div>
       </header>
-      <aside class="side-menu">
-      </aside>
-      <section id="main">
-        <div role="main">
+      <div ng-view>
+        <section role="main">
           <div id="s-changelog" class="content"><h1>Changelog</h1>
 <h2>v0.0.0 (TBA)</h2>
 <ul>
@@ -46,27 +43,27 @@
 </ul>
 
           </div>
+        </section>
+      </div>
+      <footer role="contentinfo" class="content">
+        <div class="inner"><small>
+            <p>&copy; 2013 by Pascal Hartig.</p>
+            <p>
+              Except as noted, content is licensed under
+              <a href='http://creativecommons.org/licenses/by/3.0/'>Creative
+              Commons Attribution 3.0</a>.
+              Views expressed here are my own and do not reflect those of my
+              employer.
+              
+            </p></small>
+          <nav class="footer">
+            <ul>
+              <li><a href="/impress.html" target="_self">Impress</a></li>
+              <li><a href="http://creativecommons.org/licenses/by/3.0/">Content License</a></li>
+            </ul>
+          </nav>
         </div>
-        <footer role="contentinfo" class="content">
-          <div class="inner"><small>
-              <p>&copy; 2013 by Pascal Hartig.</p>
-              <p>
-                Except as noted, content is licensed under
-                <a href='http://creativecommons.org/licenses/by/3.0/'>Creative
-                Commons Attribution 3.0</a>.
-                Views expressed here are my own and do not reflect those of my
-                employer.
-                
-              </p></small>
-            <nav class="footer">
-              <ul>
-                <li><a href="/impress.html">Impress</a></li>
-                <li><a href="http://creativecommons.org/licenses/by/3.0/">Content License</a></li>
-              </ul>
-            </nav>
-          </div>
-        </footer>
-      </section>
+      </footer>
     </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -77,6 +74,7 @@
       ga('send', 'pageview');
       
     </script>
-    <script src="scripts/d41d8cd9.main.js"></script>
+    <script src="components/angular/angular.js"></script>
+    <script src="scripts/8285fee2.main.js"></script>
   </body>
 </html>
