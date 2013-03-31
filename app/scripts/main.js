@@ -13,7 +13,7 @@
         });
 
         // Static pages
-        ['changelog'].forEach(function (page) {
+        ['impress', 'changelog'].forEach(function (page) {
             $routeProvider.when(['/', page, '.html'].join(''), {
                 templateUrl: ['pages/', page, '.html'].join('')
             });

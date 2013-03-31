@@ -5,13 +5,5 @@ block vars
     - var active = 'impress'
 
 block content
-    section(role='main')
-        .content#s-projects
-            h1 Impress
-
-            address
-                | Pascal Hartig<br>
-                | Westring 331<br>
-                | 24118 Kiel<br>
-
-                a(href='mailto:phartig@rdrei.net') phartig@rdrei.net
+    div(ng-view)
+        include pages/impress
