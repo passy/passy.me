@@ -2,7 +2,9 @@
   "name": "passy-me",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "~1.0.5"
+    "angular": "~1.0.5",
+    "isotope": "~1.5.25",
+    "jquery": "~1.9.1"
   },
   "devDependencies": {}
 }

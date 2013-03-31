@@ -85,10 +85,14 @@ html(lang='en', ng-app='passy')
       ga('create', 'UA-587894-17', 'passy.me');
       ga('send', 'pageview');
 
+    script(src='components/jquery/jquery.js')
     script(src='components/angular/angular.js')
 
     // build:js(app) scripts/main.js
+    script(src='components/isotope/jquery.isotope.js')
+
     script(src='scripts/main.js')
     script(src='scripts/controllers/projects.js')
     script(src='scripts/directives/menu.js')
+    script(src='scripts/directives/isotope.js')
     // endbuild
