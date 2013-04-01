@@ -1,232 +1,231 @@
-div(ng-controller='ProjectsCtrl')
-    aside(role='complementary', passy-floatingmenu)
-        ul
-            li.header.expandable.expanded.active
-                a(href='#') Code
+aside(role='complementary', passy-floatingmenu)
+    ul
+        li.header.expandable.expanded.active
+            a(href='#') Code
 
-                ul
-                    li
-                        a(href='#code-android') Android
-                    li
-                        a(href='#code-web') Web
-                    li
-                        a(href='#code-lowlevel') Low Level
+            ul
+                li
+                    a(href='#code-android') Android
+                li
+                    a(href='#code-web') Web
+                li
+                    a(href='#code-lowlevel') Low Level
 
-            li.header.expandable
-                a(href='#talks') Talks
+        li.header.expandable
+            a(href='#talks') Talks
 
-                ul
-                    li
-                        a(href='#talks-2012') 2012
+            ul
+                li
+                    a(href='#talks-2012') 2012
 
-                    li
-                        a(href='#talks-2013') 2013
+                li
+                    a(href='#talks-2013') 2013
 
-            li.header.expandable
-                a(href='#papers') Papers
+        li.header.expandable
+            a(href='#papers') Papers
 
-                ul
-                    li
-                        a(href='#writing-tp') Transfer Projects
+            ul
+                li
+                    a(href='#writing-tp') Transfer Projects
 
-                    li
-                        a(href='#writing-thesis') Thesis
+                li
+                    a(href='#writing-thesis') Thesis
 
-    section(role='main')
-        .content.menu#s-projects
-            h1 Projects
-            h2 Code
-                a(id='code')
+section(role='main')
+    .content.menu#s-projects
+        h1 Projects
+        h2 Code
+            a(id='code')
 
-            h3 Android
-                a(id='code-android')
+        h3 Android
+            a(id='code-android')
 
-            ul.elements(passy-isotope)
-                li.medium(style='background-image: url(/images/projects/scdl.jpg)')
-                    header Downloader for SoundCloud
-                    .inner
-                        p.description
-                            | An Android app that allows you to download songs
-                            | from SoundCloud with more than 300&nbsp;000 downloads and
-                            | counting.
-                        footer
-                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.scdl2')
-                                | Download from Google Play
+        ul.elements(passy-isotope)
+            li.medium(style='background-image: url(/images/projects/scdl.jpg)')
+                header Downloader for SoundCloud
+                .inner
+                    p.description
+                        | An Android app that allows you to download songs
+                        | from SoundCloud with more than 300&nbsp;000 downloads and
+                        | counting.
+                    footer
+                        a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.scdl2')
+                            | Download from Google Play
 
-                li.small(style='background-image: url(images/projects/wakimail.jpg)')
-                    header WAKiMail
-                    .inner
-                        p.description
-                            | An email client for my university's bugged
-                            | messaging platform.
-                        footer
-                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.wakimail')
-                                | Download from Google Play
-                            a.github.holo-button(href='https://github.com/passy/wakimail')
-                                | Fork on Github
+            li.small(style='background-image: url(images/projects/wakimail.jpg)')
+                header WAKiMail
+                .inner
+                    p.description
+                        | An email client for my university's bugged
+                        | messaging platform.
+                    footer
+                        a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.wakimail')
+                            | Download from Google Play
+                        a.github.holo-button(href='https://github.com/passy/wakimail')
+                            | Fork on Github
 
-                li.small(style='background-image: url(images/projects/simstatus.jpg)')
-                    header SimCity Server Status
-                    .inner
-                        p.description
-                            | An apps that tells you whether SimCity 2013 is
-                            | playable or not.
-                        footer
-                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.simstatus')
-                                | Download from Google Play
+            li.small(style='background-image: url(images/projects/simstatus.jpg)')
+                header SimCity Server Status
+                .inner
+                    p.description
+                        | An apps that tells you whether SimCity 2013 is
+                        | playable or not.
+                    footer
+                        a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.simstatus')
+                            | Download from Google Play
 
-                li.medium(style='background-image: url(images/projects/dirchooser.jpg)')
-                    header Android-DirectoryChooser
-                    .inner
-                        p.description
-                            | A library for Android that lets you implement a
-                            | directory chooser with ease.
-                        footer
-                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.dirchooser.sample')
-                                | Download from Google Play
-                            a.github.holo-button(href='https://github.com/passy/Android-DirectoryChooser')
-                                | Fork on Github
+            li.medium(style='background-image: url(images/projects/dirchooser.jpg)')
+                header Android-DirectoryChooser
+                .inner
+                    p.description
+                        | A library for Android that lets you implement a
+                        | directory chooser with ease.
+                    footer
+                        a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.dirchooser.sample')
+                            | Download from Google Play
+                        a.github.holo-button(href='https://github.com/passy/Android-DirectoryChooser')
+                            | Fork on Github
 
-                li.small(style='background-image: url(images/projects/whiterabbit.jpg)')
-                    header White Rabbit
-                    .inner
-                        p.description
-                            | A team effort at <a | href="https://weluse.de/">weluse</a>
-                            | that lets you share your current position via mail
-                            | or SMS.
-                        footer
-                            a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=de.weluse.android.whiterabbit')
-                                | Download from Google Play
+            li.small(style='background-image: url(images/projects/whiterabbit.jpg)')
+                header White Rabbit
+                .inner
+                    p.description
+                        | A team effort at <a | href="https://weluse.de/">weluse</a>
+                        | that lets you share your current position via mail
+                        | or SMS.
+                    footer
+                        a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=de.weluse.android.whiterabbit')
+                            | Download from Google Play
 
-            h3 Web
-                a(id='code-web')
+        h3 Web
+            a(id='code-web')
 
-            ul.elements(passy-isotope)
-                li.medium(style='background-image: url(images/projects/tastejs.jpg)')
-                    header TasteJS
-                    .inner
-                        p.description
-                            | A better JavaScript learning experience. Coming
-                            | soon.
-                        footer
-                            a.github.holo-button(href='https://github.com/tastejs')
-                                | Fork on Github
-                            a.website.holo-button(href='http://tastejs.com')
-                                | tastejs.com
+        ul.elements(passy-isotope)
+            li.medium(style='background-image: url(images/projects/tastejs.jpg)')
+                header TasteJS
+                .inner
+                    p.description
+                        | A better JavaScript learning experience. Coming
+                        | soon.
+                    footer
+                        a.github.holo-button(href='https://github.com/tastejs')
+                            | Fork on Github
+                        a.website.holo-button(href='http://tastejs.com')
+                            | tastejs.com
 
-                li.small(style='background-image: url(images/projects/passyme.jpg)')
-                    header passy.me
-                    .inner
-                        p.description
-                            | This very website. Built with Yeoman, Jade,
-                            | Compass, AngularJS and tons of awesome stuff. We
-                            | have to go deeper.
-                        footer
-                            a.github.holo-button(href='https://github.com/passy/passy.me')
-                                | Fork on Github
-                            a.website.holo-button(href='http://passy.me')
-                                | passy.me
+            li.small(style='background-image: url(images/projects/passyme.jpg)')
+                header passy.me
+                .inner
+                    p.description
+                        | This very website. Built with Yeoman, Jade,
+                        | Compass, AngularJS and tons of awesome stuff. We
+                        | have to go deeper.
+                    footer
+                        a.github.holo-button(href='https://github.com/passy/passy.me')
+                            | Fork on Github
+                        a.website.holo-button(href='http://passy.me')
+                            | passy.me
 
-                li.small(style='background-image: url(images/projects/yeoman.png)')
-                    header Yeoman
-                    .inner
-                        p.description
-                            | Modern workflow for modern webapps.
-                        footer
-                            a.github.holo-button(href='https://github.com/yeoman')
-                                | Fork on Github
-                            a.website.holo-button(href='http://yeoman.io')
-                                | yeoman.io
+            li.small(style='background-image: url(images/projects/yeoman.png)')
+                header Yeoman
+                .inner
+                    p.description
+                        | Modern workflow for modern webapps.
+                    footer
+                        a.github.holo-button(href='https://github.com/yeoman')
+                            | Fork on Github
+                        a.website.holo-button(href='http://yeoman.io')
+                            | yeoman.io
 
-                li.medium(style='background-image: url(images/projects/todomvc.jpg)')
-                    header TodoMVC
-                    .inner
-                        p.description
-                            | Helping you select an MV* framework with Addy
-                            | Osmani and Sindre Sorhus.
-                        footer
-                            a.github.holo-button(href='https://github.com/addyosmani/todomvc')
-                                | Fork on Github
-                            a.website.holo-button(href='http://todomvc.com')
-                                | todomvc.com
+            li.medium(style='background-image: url(images/projects/todomvc.jpg)')
+                header TodoMVC
+                .inner
+                    p.description
+                        | Helping you select an MV* framework with Addy
+                        | Osmani and Sindre Sorhus.
+                    footer
+                        a.github.holo-button(href='https://github.com/addyosmani/todomvc')
+                            | Fork on Github
+                        a.website.holo-button(href='http://todomvc.com')
+                            | todomvc.com
 
-                li.small(style='background-image: url(images/projects/gaeprofiler.png)')
-                    header flask-gae-mini-profiler
-                    .inner
-                        p.description
-                            | A Flask extension to easily integrate
-                            | gae_mini_profiler
-                        footer
-                            a.github.holo-button(href='https://github.com/passy/flask-gae-mini-profiler')
-                                | Fork on Github
-                            a.website.holo-button(href='http://pythonhosted.org/Flask-GAE-Mini-Profiler/')
-                                | Read Docs
+            li.small(style='background-image: url(images/projects/gaeprofiler.png)')
+                header flask-gae-mini-profiler
+                .inner
+                    p.description
+                        | A Flask extension to easily integrate
+                        | gae_mini_profiler
+                    footer
+                        a.github.holo-button(href='https://github.com/passy/flask-gae-mini-profiler')
+                            | Fork on Github
+                        a.website.holo-button(href='http://pythonhosted.org/Flask-GAE-Mini-Profiler/')
+                            | Read Docs
 
-                li.small(style='background-image: url(images/projects/generator.jpg)')
-                    header generator-generator
-                    .inner
-                        p.description
-                            | An opinionated generator for Yeoman
-                            | generators.
-                        footer
-                            a.github.holo-button(href='https://github.com/passy/generator-generator')
-                                | Fork on Github
+            li.small(style='background-image: url(images/projects/generator.jpg)')
+                header generator-generator
+                .inner
+                    p.description
+                        | An opinionated generator for Yeoman
+                        | generators.
+                    footer
+                        a.github.holo-button(href='https://github.com/passy/generator-generator')
+                            | Fork on Github
 
-                li.small(style='background-image: url(images/projects/soccer.jpg)')
-                    header soccer-stats-predictor
-                    .inner
-                        p.description
-                            | AngularJS-based app for soccer predictions based
-                            | on simple time-independent least square regression.
-                        footer
-                            a.github.holo-button(href='https://github.com/passy/soccer-stats-frontend')
-                                | Fork on Github
-                            a.website.holo-button(href='https://soccer-stats.herokuapp.com/')
-                                | Live App
+            li.small(style='background-image: url(images/projects/soccer.jpg)')
+                header soccer-stats-predictor
+                .inner
+                    p.description
+                        | AngularJS-based app for soccer predictions based
+                        | on simple time-independent least square regression.
+                    footer
+                        a.github.holo-button(href='https://github.com/passy/soccer-stats-frontend')
+                            | Fork on Github
+                        a.website.holo-button(href='https://soccer-stats.herokuapp.com/')
+                            | Live App
 
-                li.small(style='background-image: url(images/projects/twentiment.jpg)')
-                    header Twentiment
-                    .inner
-                        p.description
-                            | Sentiment analysis on Twitter using the
-                            | Naïve Bayes Classificator with ZeroMQ-server,
-                            | REST-API and AngularJS-Frontend.
-                        footer
-                            a.github.holo-button(href='https://github.com/passy/twentiment')
-                                | Fork on Github
+            li.small(style='background-image: url(images/projects/twentiment.jpg)')
+                header Twentiment
+                .inner
+                    p.description
+                        | Sentiment analysis on Twitter using the
+                        | Naïve Bayes Classificator with ZeroMQ-server,
+                        | REST-API and AngularJS-Frontend.
+                    footer
+                        a.github.holo-button(href='https://github.com/passy/twentiment')
+                            | Fork on Github
 
-            h3 Low Level
-                a(id='code-lowlevel')
+        h3 Low Level
+            a(id='code-lowlevel')
 
-            ul.elements(passy-isotope)
-                li.small(style='background-image: url(images/projects/trie.jpg)')
-                    header TrieSuggest.hs
-                    .inner
-                        p.description
-                            | A trie-based autocompleter written in Haskell.
-                        footer
-                            a.github.holo-button(href='https://github.com/passy/trie-suggest')
-                                | Fork on Github
+        ul.elements(passy-isotope)
+            li.small(style='background-image: url(images/projects/trie.jpg)')
+                header TrieSuggest.hs
+                .inner
+                    p.description
+                        | A trie-based autocompleter written in Haskell.
+                    footer
+                        a.github.holo-button(href='https://github.com/passy/trie-suggest')
+                            | Fork on Github
 
-                li.small(style='background-image: url(images/projects/webscan.jpg)')
-                    header webscan
-                    .inner
-                        p.description
-                            | An active network scanner in C approximating the
-                            | uptime of a host from its TCP headers.
+            li.small(style='background-image: url(images/projects/webscan.jpg)')
+                header webscan
+                .inner
+                    p.description
+                        | An active network scanner in C approximating the
+                        | uptime of a host from its TCP headers.
 
-                        footer
-                            a.github.holo-button(href='https://github.com/passy/webscan')
-                                | Fork on Github
+                    footer
+                        a.github.holo-button(href='https://github.com/passy/webscan')
+                            | Fork on Github
 
-            h2 Talks
-                a(id='talks')
+        h2 Talks
+            a(id='talks')
 
-            p
-                em Coming soon.™
+        p
+            em Coming soon.™
 
-            h2 Papers
-                a(id='papers')
+        h2 Papers
+            a(id='papers')
 
-            p
-                em Coming soon.™
+        p
+            em Coming soon.™

@@ -9,8 +9,7 @@
             $routeProvider.when('/', {
                 templateUrl: 'pages/index.html'
             }).when('/projects.html', {
-                templateUrl: 'pages/projects.html',
-                controller: 'ProjectsCtrl'
+                templateUrl: 'pages/projects.html'
             });
 
             // Static pages
