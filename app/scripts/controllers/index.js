@@ -1,10 +1,10 @@
-/*global passy,jQuery*/
-(function ($) {
+/*global passy*/
+(function () {
     'use strict';
 
     passy.controller('IndexCtrl', ['$scope', function ($scope) {
-        $scope.doMagic = function () {
-            $('.saying-hi .me').attr('src', 'http://i.imgur.com/MGXqGQe.gif');
+        $scope.doMagic = function (element) {
+            element.attr('src', 'http://i.imgur.com/MGXqGQe.gif');
         };
     }]);
-}(jQuery));
+}());

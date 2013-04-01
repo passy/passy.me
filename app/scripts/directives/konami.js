@@ -9,13 +9,15 @@
             var kkeys = [];
 
             $(document).on('keydown', function konamiKeydown(e) {
-                var kstr;
+                var kstr,
+                    fn = scope[attr.passyKonami];
+
                 kkeys.push(e.keyCode);
                 kstr = kkeys.toString();
 
                 if (code.indexOf(kstr.toString()) >= 0) {
                     if (kstr.toString() === code) {
-                        scope.$apply(attr.passyKonami);
+                        fn(element);
                     }
                 } else {
                     kkeys = [];
