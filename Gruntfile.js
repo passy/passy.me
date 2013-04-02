@@ -108,12 +108,10 @@ module.exports = function (grunt) {
                 'test/spec/{,*/}*.js'
             ]
         },
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://localhost:<%= connect.options.port %>/index.html']
-                }
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js',
+                singleRun: true
             }
         },
         compass: {
@@ -322,7 +320,7 @@ module.exports = function (grunt) {
         'clean:server',
         'compass',
         'connect:test',
-        'mocha'
+        'karma'
     ]);
 
     grunt.registerTask('build', [
@@ -347,7 +345,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'jshint',
-        // 'test',
+        'test',
         'build'
     ]);
 

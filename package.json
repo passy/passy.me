@@ -28,7 +28,8 @@
     "marked": "~0.2.8",
     "grunt-shell": "~0.2.1",
     "grunt-google-cdn": "~0.1.1",
-    "grunt-ngmin": "0.0.2"
+    "grunt-ngmin": "0.0.2",
+    "grunt-karma": "~0.4.0"
   },
   "engines": {
     "node": ">=0.8.0"
