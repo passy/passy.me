@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700">
     <link rel="author" href="/humans.txt">
   </head>
-  <body>
+  <body passy-konami>
     <div class="container">
       <header role="banner">
         <div class="content"><a href="/" title="passy.me" class="nolink logo">
@@ -37,7 +37,7 @@
       <div ng-view>
         <section role="main" ng-controller="IndexCtrl">
           <div id="s-index"><a name="intro"></a>
-            <div class="saying-hi"><img src="/images/passy.jpg" alt="Pascal Hartig" passy-konami="doMagic" class="me">
+            <div class="saying-hi"><img src="/images/passy.jpg" alt="Pascal Hartig" passy-onkonami="doMagic($element)" class="me">
               <hgroup>
                 <h1>Hi, I'm Pascal Hartig.</h1>
                 <h2>
