@@ -13,7 +13,6 @@
                 kkeys.push(e.keyCode);
                 kstr = kkeys.toString();
 
-                console.log('kstr', kstr);
                 if (code.indexOf(kstr.toString()) >= 0) {
                     if (kstr.toString() === code) {
                         scope.$broadcast('konami');

@@ -112,6 +112,11 @@ module.exports = function (grunt) {
             unit: {
                 configFile: 'karma.conf.js',
                 singleRun: true
+            },
+            server: {
+                configFile: 'karma.conf.js',
+                singleRun: false,
+                autoWatch: true
             }
         },
         compass: {
@@ -320,7 +325,7 @@ module.exports = function (grunt) {
         'clean:server',
         'compass',
         'connect:test',
-        'karma'
+        'karma:unit'
     ]);
 
     grunt.registerTask('build', [
