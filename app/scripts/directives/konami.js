@@ -1,28 +1,36 @@
-/*global jQuery*/
-(function ($) {
+(function () {
     'use strict';
 
     window.passy.directive('passyKonami', [function () {
         var code = '38,38,40,40,37,39,37,39,66,65';
 
-        return function passyKonamiDirective(scope, element, attr) {
+        return function passyKonamiDirective(scope, element) {
             var kkeys = [];
 
-            $(document).on('keydown', function konamiKeydown(e) {
-                var kstr,
-                    fn = scope[attr.passyKonami];
+            element.on('keydown', function konamiKeydown(e) {
+                var kstr;
 
                 kkeys.push(e.keyCode);
                 kstr = kkeys.toString();
 
+                console.log('kstr', kstr);
                 if (code.indexOf(kstr.toString()) >= 0) {
                     if (kstr.toString() === code) {
-                        fn(element);
+                        scope.$broadcast('konami');
                     }
                 } else {
                     kkeys = [];
                 }
             });
         };
+    }]).directive('passyOnkonami', ['$parse', function ($parse) {
+        return function passyOnKonamiDirective(scope, element, attrs) {
+            scope.$on('konami', function () {
+                var newScope = scope.$new();
+                scope.$element = element;
+
+                $parse(attrs.passyOnkonami)(newScope);
+            });
+        };
     }]);
-}(jQuery));
+}());
