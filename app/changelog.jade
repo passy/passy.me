@@ -5,5 +5,11 @@ block vars
     - var active = 'changelog'
 
 block content
-    div(ng-view)
-        include pages/changelog
+    .content#s-changelog
+        :markdown
+            # Changelog
+
+            ## v0.1.0 (2013-03-31)
+
+            - Added first few projects.
+            - Still misses the menu functionality.
