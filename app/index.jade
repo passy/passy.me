@@ -1,5 +1,43 @@
 extends layout
 
 block content
-    div(ng-view)
-        include pages/index
+    section(role='main', ng-controller='IndexCtrl')
+        #s-index
+            a(name='intro')
+            .saying-hi
+                img.me(src='/images/passy.jpg', alt='Pascal Hartig', passy-onkonami='doMagic($element)')
+                hgroup
+                    h1 Hi, I'm Pascal Hartig.
+                    h2
+                        | I'm a Software Engineer at weluse <span class="superamp">&amp;</span>
+                        | Open Source Addict.
+
+            a(name='social')
+            ul.social
+                li
+                    a.github(href='https://github.com/passy')
+                li
+                    a.twitter(href='https://twitter.com/passy')
+                li
+                    a.gplus(href='http://gplus.to/passy')
+
+            a(name='about')
+            article.prose
+                p
+                    | I'm Pascal and I love building stuff. My favorite platforms
+                    | this are the web and mobile. On mobile my prefered
+                    | environment is Android, which I built several native apps for.
+                    | On the web, I like building rich MV*-based applications
+                    | with Backbone, AngularJS, Ember or whatever fits best.
+                    | For backend work, I've been using Python for as long as I
+                    | can think.
+
+                p
+                    | I spend a lot of my free time doing Open Source. Two of my
+                    | favorite projects I am working on are <a
+                    | href="http://todomvc.com">TodoMVC</a>, a learning resource
+                    | helping you select the right MV* framework, and <a
+                    | href="http://yeoman.io">Yeoman</a>, a modern workflow for
+                    | modern webapps. I also take care of some of my own
+                    | projects and those we open-sourced at <a
+                    | href="https://weluse.de/">weluse</a>.
