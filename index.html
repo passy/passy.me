@@ -17,8 +17,8 @@
             <div class="icon"></div><span>passy.me</span></a>
           <nav role="navigation">
             <ul class="main-menu">
-              <li class="active"><a href="/" passy-menu>About</a></li>
-              <li><a href="/projects.html" passy-menu>Projects</a></li>
+              <li class="active"><a href="/">About</a></li>
+              <li><a href="/projects.html">Projects</a></li>
               <li><a href="https://weluse.de/blog">Blog</a></li>
             </ul>
             <div href="#" class="overflow"><span class="icon"></span></div>
@@ -34,46 +34,45 @@
           </nav>
         </div>
       </header>
-      <div ng-view>
-        <section role="main" ng-controller="IndexCtrl">
-          <div id="s-index"><a name="intro"></a>
-            <div class="saying-hi"><img src="/images/passy.jpg" alt="Pascal Hartig" passy-onkonami="doMagic($element)" class="me">
-              <hgroup>
-                <h1>Hi, I'm Pascal Hartig.</h1>
-                <h2>
-                  I'm a Software Engineer at weluse <span class="superamp">&amp;</span>
-                  Open Source Addict.
-                </h2>
-              </hgroup>
-            </div><a name="social"></a>
-            <ul class="social">
-              <li><a href="https://github.com/passy" class="github"></a></li>
-              <li><a href="https://twitter.com/passy" class="twitter"></a></li>
-              <li><a href="http://gplus.to/passy" class="gplus"></a></li>
-            </ul><a name="about"></a>
-            <article class="prose">
-              <p>
-                I'm Pascal and I love building stuff. My favorite platforms
-                for doing that are the web and mobile. On mobile my prefered
-                environment is Android, which I built several native apps for.
-                On the web, I like to use whatever is hip and trendy at the
-                moment, but I always get back to my favorite language Python
-                for the work behind the scenes.
-              </p>
-              <p>
-                I spend a lot of my free time doing Open Source. Two of my
-                favorite projects I am working on are <a
-                href="http://todomvc.com">TodoMVC</a>, a learning resource
-                helping you select the right MV* framework, and <a
-                href="http://yeoman.io">Yeoman</a>, a modern workflow for
-                modern webapps. I'm also taking care of some of my own
-                projects and those we open-sourced at <a
-                href="https://weluse.de/">weluse</a>.
-              </p>
-            </article>
-          </div>
-        </section>
-      </div>
+      <section role="main" ng-controller="IndexCtrl">
+        <div id="s-index"><a name="intro"></a>
+          <div class="saying-hi"><img src="/images/passy.jpg" alt="Pascal Hartig" passy-onkonami="doMagic($element)" class="me">
+            <hgroup>
+              <h1>Hi, I'm Pascal Hartig.</h1>
+              <h2>
+                I'm a Software Engineer at weluse <span class="superamp">&amp;</span>
+                Open Source Addict.
+              </h2>
+            </hgroup>
+          </div><a name="social"></a>
+          <ul class="social">
+            <li><a href="https://github.com/passy" class="github"></a></li>
+            <li><a href="https://twitter.com/passy" class="twitter"></a></li>
+            <li><a href="http://gplus.to/passy" class="gplus"></a></li>
+          </ul><a name="about"></a>
+          <article class="prose">
+            <p>
+              I'm Pascal and I love building stuff. My favorite platforms
+              this are the web and mobile. On mobile my prefered
+              environment is Android, which I built several native apps for.
+              On the web, I like building rich MV*-based applications
+              with Backbone, AngularJS, Ember or whatever fits best.
+              For backend work, I've been using Python for as long as I
+              can think.
+            </p>
+            <p>
+              I spend a lot of my free time doing Open Source. Two of my
+              favorite projects I am working on are <a
+              href="http://todomvc.com">TodoMVC</a>, a learning resource
+              helping you select the right MV* framework, and <a
+              href="http://yeoman.io">Yeoman</a>, a modern workflow for
+              modern webapps. I also take care of some of my own
+              projects and those we open-sourced at <a
+              href="https://weluse.de/">weluse</a>.
+            </p>
+          </article>
+        </div>
+      </section>
       <footer role="contentinfo" class="content">
         <div class="inner"><small>
             <p>&copy; 2013 by Pascal Hartig.</p>
@@ -104,7 +103,7 @@
       
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>

@@ -17,8 +17,8 @@
             <div class="icon"></div><span>passy.me</span></a>
           <nav role="navigation">
             <ul class="main-menu">
-              <li><a href="/" passy-menu>About</a></li>
-              <li><a href="/projects.html" passy-menu>Projects</a></li>
+              <li><a href="/">About</a></li>
+              <li><a href="/projects.html">Projects</a></li>
               <li><a href="https://weluse.de/blog">Blog</a></li>
             </ul>
             <div href="#" class="overflow"><span class="icon"></span></div>
@@ -34,18 +34,16 @@
           </nav>
         </div>
       </header>
-      <div ng-view>
-        <section role="main">
-          <div id="s-projects" class="content">
-            <h1>Impress</h1>
-            <address>
-              Pascal Hartig<br>
-              Westring 331<br>
-              24118 Kiel<br><a href="mailto:phartig@rdrei.net">phartig@rdrei.net</a>
-            </address>
-          </div>
-        </section>
-      </div>
+      <section role="main">
+        <div id="s-projects" class="content">
+          <h1>Impress</h1>
+          <address>
+            Pascal Hartig<br>
+            Westring 331<br>
+            24118 Kiel<br><a href="mailto:phartig@rdrei.net">phartig@rdrei.net</a>
+          </address>
+        </div>
+      </section>
       <footer role="contentinfo" class="content">
         <div class="inner"><small>
             <p>&copy; 2013 by Pascal Hartig.</p>
@@ -75,8 +73,8 @@
       ga('send', 'pageview');
       
     </script>
-    <script src="components/jquery/jquery.js"></script>
-    <script src="components/angular/angular.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>

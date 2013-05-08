@@ -17,8 +17,8 @@
             <div class="icon"></div><span>passy.me</span></a>
           <nav role="navigation">
             <ul class="main-menu">
-              <li><a href="/" passy-menu>About</a></li>
-              <li><a href="/projects.html" passy-menu>Projects</a></li>
+              <li><a href="/">About</a></li>
+              <li><a href="/projects.html">Projects</a></li>
               <li><a href="https://weluse.de/blog">Blog</a></li>
             </ul>
             <div href="#" class="overflow"><span class="icon"></span></div>
@@ -34,17 +34,13 @@
           </nav>
         </div>
       </header>
-      <div ng-view>
-        <section role="main">
-          <div id="s-changelog" class="content"><h1>Changelog</h1>
+      <div id="s-changelog" class="content"><h1>Changelog</h1>
 <h2>v0.1.0 (2013-03-31)</h2>
 <ul>
 <li>Added first few projects.</li>
 <li>Still misses the menu functionality.</li>
 </ul>
 
-          </div>
-        </section>
       </div>
       <footer role="contentinfo" class="content">
         <div class="inner"><small>
@@ -75,8 +71,8 @@
       ga('send', 'pageview');
       
     </script>
-    <script src="components/jquery/jquery.js"></script>
-    <script src="components/angular/angular.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
