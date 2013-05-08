@@ -1,3 +1,16 @@
 # passy.me
 
-My upcoming homepage. Hopefully.
+My homepage.
+
+## Developing
+
+```bash
+npm install & bower install
+grunt server
+```
+
+## Deploying
+
+```bash
+grunt deploy
+```
