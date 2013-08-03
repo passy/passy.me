@@ -1,0 +1,15 @@
+/**** Masonry ****/
+
+.masonry-brick {
+  float: left;
+  margin: 0.5em;
+  display: none;
+
+  &.loaded {
+    display: block;
+  }
+}
+
+.masonry {
+  margin-bottom: 3em;
+}
