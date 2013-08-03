@@ -1,21 +1,14 @@
-(function () {
-    'use strict';
+'use strict';
 
-    window.passy.directive('passyIsotope', ['$timeout', function ($timeout) {
-        return function link(scope, element) {
-            var $isotope = element.isotope({
-                itemSelector: 'li',
-                layoutMode: 'fitRows'
-            });
-
-            $timeout(function () {
-                $isotope.isotope('reLayout');
-            });
-
-            element.find('li').click(function () {
+window.passy.directive('expandableTiles', function expandableTilesDirective() {
+    return {
+        restrict: 'A',
+        require: '^masonry',
+        link: function link(scope, element, attrs, ctrl) {
+            element.find(attrs.expandableTiles).click(function () {
                 this.classList.toggle('large');
-                $isotope.isotope('reLayout');
+                ctrl.scheduleMasonryOnce();
             });
-        };
-    }]);
-}());
+        }
+    };
+});
