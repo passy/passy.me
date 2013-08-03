@@ -248,7 +248,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        // Put files not handled in other tasks here
         copy: {
             dist: {
                 files: [{
@@ -290,6 +289,10 @@ module.exports = function (grunt) {
                     execOptions: {cwd: 'dist'}
                 }
             },
+        },
+        'bower-install': {
+            html: 'app/layout.jade',
+            ignorePath: 'app/'
         }
     });
 
