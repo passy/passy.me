@@ -34,7 +34,7 @@
           </nav>
         </div>
       </header>
-      <aside role="complementary" passy-floatingmenu>
+      <aside role="complementary" bs-affix data-offset-top="97" class="sticky">
         <ul>
           <li class="header expandable expanded active"><a href="#">Code</a>
             <ul>
@@ -58,12 +58,11 @@
         </ul>
       </aside>
       <section role="main">
-        <div id="s-projects" class="content menu">
+        <div class="content menu">
           <h1>Projects</h1>
           <h2>Code<a id="code"></a></h2>
-          <h3>Android<a id="code-android"></a></h3>
-          <ul passy-isotope class="elements">
-            <li style="background-image: url(/images/projects/scdl.jpg)" class="medium">
+          <div expandable-tiles=".tile-screen-brick" class="tile-screen"><a id="code-android"></a>
+            <div style="background-image: url(images/projects/scdl.jpg)" class="medium tile-screen-brick android">
               <header>Downloader for SoundCloud</header>
               <div class="inner">
                 <p class="description">
@@ -72,8 +71,8 @@
                 </p>
                 <footer><a href="https://play.google.com/store/apps/details?id=net.rdrei.android.scdl2" class="gplay holo-button">Download from Google Play</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/wakimail.jpg)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/wakimail.jpg)" class="tile-screen-brick android">
               <header>WAKiMail</header>
               <div class="inner">
                 <p class="description">
@@ -82,8 +81,8 @@
                 </p>
                 <footer><a href="https://play.google.com/store/apps/details?id=net.rdrei.android.wakimail" class="gplay holo-button">Download from Google Play</a><a href="https://github.com/passy/wakimail" class="github holo-button">Fork on Github</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/simstatus.jpg)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/simstatus.jpg)" class="tile-screen-brick android">
               <header>SimCity Server Status</header>
               <div class="inner">
                 <p class="description">
@@ -92,8 +91,8 @@
                 </p>
                 <footer><a href="https://play.google.com/store/apps/details?id=net.rdrei.android.simstatus" class="gplay holo-button">Download from Google Play</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/dirchooser.jpg)" class="medium">
+            </div>
+            <div style="background-image: url(images/projects/dirchooser.jpg)" class="tile-screen-brick android">
               <header>Android-DirectoryChooser</header>
               <div class="inner">
                 <p class="description">
@@ -102,8 +101,8 @@
                 </p>
                 <footer><a href="https://play.google.com/store/apps/details?id=net.rdrei.android.dirchooser.sample" class="gplay holo-button">Download from Google Play</a><a href="https://github.com/passy/Android-DirectoryChooser" class="github holo-button">Fork on Github</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/whiterabbit.jpg)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/whiterabbit.jpg)" class="tile-screen-brick android">
               <header>White Rabbit</header>
               <div class="inner">
                 <p class="description">
@@ -113,11 +112,8 @@
                 </p>
                 <footer><a href="https://play.google.com/store/apps/details?id=de.weluse.android.whiterabbit" class="gplay holo-button">Download from Google Play</a></footer>
               </div>
-            </li>
-          </ul>
-          <h3>Web<a id="code-web"></a></h3>
-          <ul passy-isotope class="elements">
-            <li style="background-image: url(images/projects/tastejs.jpg)" class="medium">
+            </div><a id="code-web"></a>
+            <div style="background-image: url(images/projects/tastejs.jpg)" class="tile-screen-brick web">
               <header>TasteJS</header>
               <div class="inner">
                 <p class="description">
@@ -126,8 +122,8 @@
                 </p>
                 <footer><a href="https://github.com/tastejs" class="github holo-button">Fork on Github</a><a href="http://tastejs.com" class="website holo-button">tastejs.com</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/passyme.jpg)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/passyme.jpg)" class="tile-screen-brick web">
               <header>passy.me</header>
               <div class="inner">
                 <p class="description">
@@ -137,15 +133,15 @@
                 </p>
                 <footer><a href="https://github.com/passy/passy.me" class="github holo-button">Fork on Github</a><a href="http://passy.me" class="website holo-button">passy.me</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/yeoman.png)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/yeoman.png)" class="tile-screen-brick web">
               <header>Yeoman</header>
               <div class="inner">
                 <p class="description">Modern workflow for modern webapps.</p>
                 <footer><a href="https://github.com/yeoman" class="github holo-button">Fork on Github</a><a href="http://yeoman.io" class="website holo-button">yeoman.io</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/todomvc.jpg)" class="medium">
+            </div>
+            <div style="background-image: url(images/projects/todomvc.jpg)" class="medium tile-screen-brick web">
               <header>TodoMVC</header>
               <div class="inner">
                 <p class="description">
@@ -154,8 +150,8 @@
                 </p>
                 <footer><a href="https://github.com/addyosmani/todomvc" class="github holo-button">Fork on Github</a><a href="http://todomvc.com" class="website holo-button">todomvc.com</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/gaeprofiler.png)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/gaeprofiler.png)" class="tile-screen-brick web">
               <header>flask-gae-mini-profiler</header>
               <div class="inner">
                 <p class="description">
@@ -164,18 +160,8 @@
                 </p>
                 <footer><a href="https://github.com/passy/flask-gae-mini-profiler" class="github holo-button">Fork on Github</a><a href="http://pythonhosted.org/Flask-GAE-Mini-Profiler/" class="website holo-button">Read Docs</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/generator.jpg)" class="small">
-              <header>generator-generator</header>
-              <div class="inner">
-                <p class="description">
-                  An opinionated generator for Yeoman
-                  generators.
-                </p>
-                <footer><a href="https://github.com/passy/generator-generator" class="github holo-button">Fork on Github</a></footer>
-              </div>
-            </li>
-            <li style="background-image: url(images/projects/soccer.jpg)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/soccer.jpg)" class="tile-screen-brick web">
               <header>soccer-stats-predictor</header>
               <div class="inner">
                 <p class="description">
@@ -184,8 +170,18 @@
                 </p>
                 <footer><a href="https://github.com/passy/soccer-stats-frontend" class="github holo-button">Fork on Github</a><a href="https://soccer-stats.herokuapp.com/" class="website holo-button">Live App</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/twentiment.jpg)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/generator.jpg)" class="medium tile-screen-brick web">
+              <header>generator-generator</header>
+              <div class="inner">
+                <p class="description">
+                  An opinionated generator for Yeoman
+                  generators.
+                </p>
+                <footer><a href="https://github.com/passy/generator-generator" class="github holo-button">Fork on Github</a></footer>
+              </div>
+            </div>
+            <div style="background-image: url(images/projects/twentiment.jpg)" class="tile-screen-brick web">
               <header>Twentiment</header>
               <div class="inner">
                 <p class="description">
@@ -195,8 +191,8 @@
                 </p>
                 <footer><a href="https://github.com/passy/twentiment" class="github holo-button">Fork on Github</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/dasfrizz.png)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/dasfrizz.png)" class="tile-screen-brick web">
               <header>Mobile Restaurants</header>
               <div class="inner">
                 <p class="description">
@@ -205,18 +201,15 @@
                 </p>
                 <footer><a href="https://github.com/passy/mobile-restaurants" class="github holo-button">Fork on Github</a><a href="https://dasfrizz.herokuapp.com" rel="nofollow" class="website holo-button">See on Mobile</a></footer>
               </div>
-            </li>
-          </ul>
-          <h3>Low Level<a id="code-lowlevel"></a></h3>
-          <ul passy-isotope class="elements">
-            <li style="background-image: url(images/projects/trie.jpg)" class="small">
+            </div><a id="code-lowlevel"></a>
+            <div style="background-image: url(images/projects/trie.jpg)" class="tile-screen-brick lowlevel">
               <header>TrieSuggest.hs</header>
               <div class="inner">
                 <p class="description">A trie-based autocompleter written in Haskell.</p>
                 <footer><a href="https://github.com/passy/TrieSuggest" class="github holo-button">Fork on Github</a></footer>
               </div>
-            </li>
-            <li style="background-image: url(images/projects/webscan.jpg)" class="small">
+            </div>
+            <div style="background-image: url(images/projects/webscan.jpg)" class="tile-screen-brick lowlevel">
               <header>webscan</header>
               <div class="inner">
                 <p class="description">
@@ -225,8 +218,8 @@
                 </p>
                 <footer><a href="https://github.com/passy/webscan" class="github holo-button">Fork on Github</a></footer>
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
           <h2>Talks<a id="talks"></a></h2>
           <p><em>Coming soon.™</em></p>
           <h2>Papers<a id="papers"></a></h2>
@@ -262,8 +255,13 @@
       ga('send', 'pageview');
       
     </script>
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
+    <div>
+      <!-- bower -->
+      <script src="bower_components/jquery/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <!-- endbower -->
+      
+    </div>
     <script src="scripts/main.js"></script>
   </body>
 </html>

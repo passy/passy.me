@@ -1,9 +1,0 @@
-{
-  "name": "portamento",
-  "version": "0.0.0",
-  "commit": "6f2b6a0b16ea583dfd943f2ba9daadbb8bc48a8c",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/krisnoble/Portamento.git"
-  }
-}
