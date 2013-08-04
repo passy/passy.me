@@ -24,9 +24,9 @@
             height: design-sprite-height('icon_more')
 
     .overflow-menu
-        +transition-timing-function(ease)
-        +transition-property(opacity, height)
-        +transition-duration(0)
+        transition-timing-function: ease
+        transition-property: opacity, height
+        transition-duration: 0
 
         opacity: 0
         height: 48px
@@ -43,11 +43,11 @@
 
         @media only screen and (max-width : $mq-tablet-portrait + .001) and (min-width : $mq-mobile-menu)
             top: -2 * 16px
-            +calc(top, '-#{$HEADER_HEIGHT} + 3em')
+            top: calc(-#{$HEADER_HEIGHT} + 3em)
 
         +mobile-portrait-and-below
             top: -3 * 16px
-            +calc(top, '-#{$HEADER_HEIGHT} - 1em')
+            top: calc(-#{$HEADER_HEIGHT} - 1em)
 
         &::before
             // The overlay on top of the overlay icon to
@@ -80,7 +80,7 @@
             background: white
 
         &:hover
-            +transition-duration(0.25s)
+            transition-duration: .25s
             opacity: 1
             // Hard-coded for animations. :(
             // If anymations to height: auto will ever be supported,

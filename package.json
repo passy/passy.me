@@ -26,7 +26,8 @@
     "grunt-google-cdn": "~0.2.1",
     "grunt-ngmin": "0.0.2",
     "grunt-karma": "~0.4.0",
-    "grunt-bower-install": "~0.4.0"
+    "grunt-bower-install": "~0.4.0",
+    "grunt-autoprefixer": "~0.2.20130718"
   },
   "engines": {
     "node": ">=0.8.0"

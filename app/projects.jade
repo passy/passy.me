@@ -5,7 +5,7 @@ block vars
     - var active = 'projects'
 
 block content
-    aside(role='complementary', passy-floatingmenu)
+    aside.sticky(role='complementary', bs-affix, data-offset-top="97")
         ul
             li.header.expandable.expanded.active
                 a(href='#') Code
@@ -39,16 +39,16 @@ block content
                         a(href='#writing-thesis') Thesis
 
     section(role='main')
-        .content.menu#s-projects
+        .content.menu
             h1 Projects
             h2 Code
                 a(id='code')
 
-            h3 Android
+
+            div.tile-screen(expandable-tiles=".tile-screen-brick")
                 a(id='code-android')
 
-            ul.elements(passy-isotope)
-                li.medium(style='background-image: url(/images/projects/scdl.jpg)')
+                div.medium.tile-screen-brick.android(style='background-image: url(images/projects/scdl.jpg)')
                     header Downloader for SoundCloud
                     .inner
                         p.description
@@ -58,7 +58,7 @@ block content
                             a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.scdl2')
                                 | Download from Google Play
 
-                li.small(style='background-image: url(images/projects/wakimail.jpg)')
+                div.tile-screen-brick.android(style='background-image: url(images/projects/wakimail.jpg)')
                     header WAKiMail
                     .inner
                         p.description
@@ -70,7 +70,7 @@ block content
                             a.github.holo-button(href='https://github.com/passy/wakimail')
                                 | Fork on Github
 
-                li.small(style='background-image: url(images/projects/simstatus.jpg)')
+                div.tile-screen-brick.android(style='background-image: url(images/projects/simstatus.jpg)')
                     header SimCity Server Status
                     .inner
                         p.description
@@ -80,7 +80,7 @@ block content
                             a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=net.rdrei.android.simstatus')
                                 | Download from Google Play
 
-                li.medium(style='background-image: url(images/projects/dirchooser.jpg)')
+                div.tile-screen-brick.android(style='background-image: url(images/projects/dirchooser.jpg)')
                     header Android-DirectoryChooser
                     .inner
                         p.description
@@ -92,7 +92,7 @@ block content
                             a.github.holo-button(href='https://github.com/passy/Android-DirectoryChooser')
                                 | Fork on Github
 
-                li.small(style='background-image: url(images/projects/whiterabbit.jpg)')
+                div.tile-screen-brick.android(style='background-image: url(images/projects/whiterabbit.jpg)')
                     header White Rabbit
                     .inner
                         p.description
@@ -103,11 +103,8 @@ block content
                             a.gplay.holo-button(href='https://play.google.com/store/apps/details?id=de.weluse.android.whiterabbit')
                                 | Download from Google Play
 
-            h3 Web
                 a(id='code-web')
-
-            ul.elements(passy-isotope)
-                li.medium(style='background-image: url(images/projects/tastejs.jpg)')
+                div.tile-screen-brick.web(style='background-image: url(images/projects/tastejs.jpg)')
                     header TasteJS
                     .inner
                         p.description
@@ -119,7 +116,7 @@ block content
                             a.website.holo-button(href='http://tastejs.com')
                                 | tastejs.com
 
-                li.small(style='background-image: url(images/projects/passyme.jpg)')
+                div.tile-screen-brick.web(style='background-image: url(images/projects/passyme.jpg)')
                     header passy.me
                     .inner
                         p.description
@@ -132,7 +129,7 @@ block content
                             a.website.holo-button(href='http://passy.me')
                                 | passy.me
 
-                li.small(style='background-image: url(images/projects/yeoman.png)')
+                div.tile-screen-brick.web(style='background-image: url(images/projects/yeoman.png)')
                     header Yeoman
                     .inner
                         p.description
@@ -143,7 +140,7 @@ block content
                             a.website.holo-button(href='http://yeoman.io')
                                 | yeoman.io
 
-                li.medium(style='background-image: url(images/projects/todomvc.jpg)')
+                div.medium.tile-screen-brick.web(style='background-image: url(images/projects/todomvc.jpg)')
                     header TodoMVC
                     .inner
                         p.description
@@ -155,7 +152,7 @@ block content
                             a.website.holo-button(href='http://todomvc.com')
                                 | todomvc.com
 
-                li.small(style='background-image: url(images/projects/gaeprofiler.png)')
+                div.tile-screen-brick.web(style='background-image: url(images/projects/gaeprofiler.png)')
                     header flask-gae-mini-profiler
                     .inner
                         p.description
@@ -167,17 +164,8 @@ block content
                             a.website.holo-button(href='http://pythonhosted.org/Flask-GAE-Mini-Profiler/')
                                 | Read Docs
 
-                li.small(style='background-image: url(images/projects/generator.jpg)')
-                    header generator-generator
-                    .inner
-                        p.description
-                            | An opinionated generator for Yeoman
-                            | generators.
-                        footer
-                            a.github.holo-button(href='https://github.com/passy/generator-generator')
-                                | Fork on Github
 
-                li.small(style='background-image: url(images/projects/soccer.jpg)')
+                div.tile-screen-brick.web(style='background-image: url(images/projects/soccer.jpg)')
                     header soccer-stats-predictor
                     .inner
                         p.description
@@ -189,7 +177,17 @@ block content
                             a.website.holo-button(href='https://soccer-stats.herokuapp.com/')
                                 | Live App
 
-                li.small(style='background-image: url(images/projects/twentiment.jpg)')
+                div.medium.tile-screen-brick.web(style='background-image: url(images/projects/generator.jpg)')
+                    header generator-generator
+                    .inner
+                        p.description
+                            | An opinionated generator for Yeoman
+                            | generators.
+                        footer
+                            a.github.holo-button(href='https://github.com/passy/generator-generator')
+                                | Fork on Github
+
+                div.tile-screen-brick.web(style='background-image: url(images/projects/twentiment.jpg)')
                     header Twentiment
                     .inner
                         p.description
@@ -200,7 +198,7 @@ block content
                             a.github.holo-button(href='https://github.com/passy/twentiment')
                                 | Fork on Github
 
-                li.small(style='background-image: url(images/projects/dasfrizz.png)')
+                div.tile-screen-brick.web(style='background-image: url(images/projects/dasfrizz.png)')
                     header Mobile Restaurants
                     .inner
                         p.description
@@ -213,11 +211,8 @@ block content
                             a.website.holo-button(href='https://dasfrizz.herokuapp.com', rel='nofollow')
                                 | See on Mobile
 
-            h3 Low Level
                 a(id='code-lowlevel')
-
-            ul.elements(passy-isotope)
-                li.small(style='background-image: url(images/projects/trie.jpg)')
+                div.tile-screen-brick.lowlevel(style='background-image: url(images/projects/trie.jpg)')
                     header TrieSuggest.hs
                     .inner
                         p.description
@@ -226,7 +221,7 @@ block content
                             a.github.holo-button(href='https://github.com/passy/TrieSuggest')
                                 | Fork on Github
 
-                li.small(style='background-image: url(images/projects/webscan.jpg)')
+                div.tile-screen-brick.lowlevel(style='background-image: url(images/projects/webscan.jpg)')
                     header webscan
                     .inner
                         p.description

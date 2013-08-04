@@ -89,15 +89,13 @@ html(lang='en', ng-app='passy')
         <!-- bower -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/imagesloaded/imagesloaded.js"></script>
-        <script src="bower_components/masonry/masonry.js"></script>
-        <script src="bower_components/angular-masonry/angular-masonry.js"></script>
         <!-- endbower -->
 
     // build:js(app) scripts/main.js
     script(src='scripts/main.js')
     script(src='scripts/controllers/index.js')
-    script(src='scripts/directives/isotope.js')
-    script(src='scripts/directives/floatingmenu.js')
+    script(src='scripts/directives/expandableTiles.js')
     script(src='scripts/directives/konami.js')
+    script(src='bower_components/angular-jquery/dist/angular-jquery.js')
+    script(src='bower_components/angular-bootstrap-affix/dist/angular-bootstrap-affix.js')
     // endbuild
