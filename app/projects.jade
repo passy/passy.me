@@ -5,7 +5,7 @@ block vars
     - var active = 'projects'
 
 block content
-    aside(role='complementary')
+    aside.sticky(role='complementary', bs-affix, data-offset-top="97")
         ul
             li.header.expandable.expanded.active
                 a(href='#') Code
@@ -48,7 +48,7 @@ block content
             div.tile-screen(expandable-tiles=".tile-screen-brick")
                 a(id='code-android')
 
-                div.medium.tile-screen-brick.android(style='background-image: url(/images/projects/scdl.jpg)')
+                div.medium.tile-screen-brick.android(style='background-image: url(images/projects/scdl.jpg)')
                     header Downloader for SoundCloud
                     .inner
                         p.description

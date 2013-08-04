@@ -3,7 +3,7 @@
 (function (window) {
     'use strict';
 
-    window.passy = angular.module('passy', [],
+    window.passy = angular.module('passy', ['mgcrea.bootstrap.affix'],
                                   ['$routeProvider', '$locationProvider', function (
         $routeProvider, $locationProvider) {
 

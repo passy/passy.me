@@ -1,6 +1,11 @@
 .tile-screen
     overflow: hidden
 
+    width: (11em + 1em) * 3
+
+$tile-screen-background: rgba(0, 0, 0, 0.6) !default
+$tile-screen-text: rgb(250, 250, 250) !default
+
 .tile-screen-brick
     width: 11em
     height: 11em
@@ -16,21 +21,35 @@
     background-repeat: no-repeat
     background-size: cover
 
-    transition: height, width 0.5s ease-in
+    transition: none 0.5s ease-in
+    transition-property: height, width
 
     +mobile-menu-and-below
         width: 100% !important
 
     footer
+        z-index: 5
         a
             display: block
             margin-bottom: .5em
 
+    img
+        width: 100%
+        position: absolute
+        top: -50%
+        z-index: 1
+
     .description
-        margin-top: 4em
+        margin: 0 0 1em 0
 
     .inner
         display: none
+        height: 100%
+        padding: 1em
+        margin-top: 3em
+        margin-left: 50%
+        background: $tile-screen-background
+        color: $tile-screen-text
 
     &.medium
         width: 23em
@@ -39,24 +58,21 @@
     &.large
         width: 23em
         height: 23em
-        background-position: left
-        background-size: contain
 
         .inner
             display: block
-            padding-left: 55%
-            padding-right: 1em
 
         header
             top: 0
 
     header
         position: absolute
+        z-index: 5
         bottom: 0
         left: 0
         height: 3em
-        color: white
-        background: rgba(0, 0, 0, 0.6)
+        color: $tile-screen-text
+        background: $tile-screen-background
         width: 100%
 
         text-align: center
