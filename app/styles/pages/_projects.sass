@@ -1,51 +1,54 @@
 .tile-screen
-    display: block
+    overflow: hidden
 
-    .masonry-brick
-        width: 10em
-        height: 10em
-        position: relative
+.tile-screen-brick
+    width: 11em
+    height: 11em
+    position: relative
+    float: left
 
-        background: $COLOR_BOX
-        overflow: hidden
-        vertical-align: middle
-        margin: 0 1em 1em 0
+    background: $COLOR_BOX
+    overflow: hidden
+    vertical-align: middle
+    margin: 0 1em 1em 0
 
-        background-position: 50% 50%
-        background-repeat: no-repeat
-        background-size: cover
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    background-size: cover
 
-        +mobile-menu-and-below
-            width: 100% !important
+    transition: height, width 0.5s ease-in
 
-        footer
-            a
-                display: block
-                margin-bottom: .5em
+    +mobile-menu-and-below
+        width: 100% !important
 
-        .description
-            margin-top: 4em
+    footer
+        a
+            display: block
+            margin-bottom: .5em
+
+    .description
+        margin-top: 4em
+
+    .inner
+        display: none
+
+    &.medium
+        width: 23em
+        height: 11em
+
+    &.large
+        width: 23em
+        height: 23em
+        background-position: left
+        background-size: contain
 
         .inner
-            display: none
+            display: block
+            padding-left: 55%
+            padding-right: 1em
 
-        &.medium
-            width: 18em
-            height: 15em
-
-        &.large
-            width: 22em
-            height: 18em
-            background-position: left
-            background-size: contain
-
-            .inner
-                display: block
-                padding-left: 55%
-                padding-right: 1em
-
-            header
-                top: 0
+        header
+            top: 0
 
     header
         position: absolute

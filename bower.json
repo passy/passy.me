@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "dependencies": {
     "angular": "~1.0.5",
-    "angular-masonry": "~0.3.0",
     "jquery": "~2.0.0"
   },
   "devDependencies": {

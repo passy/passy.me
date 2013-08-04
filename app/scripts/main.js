@@ -3,7 +3,7 @@
 (function (window) {
     'use strict';
 
-    window.passy = angular.module('passy', ['wu.masonry'],
+    window.passy = angular.module('passy', [],
                                   ['$routeProvider', '$locationProvider', function (
         $routeProvider, $locationProvider) {
 
