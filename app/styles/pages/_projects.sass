@@ -5,11 +5,17 @@ $tile-screen-text: rgb(250, 250, 250) !default
     overflow: hidden
     width: (11em + 1em) * 3
 
+    +mobile-landscape-and-below
+        width: 100%
+
 .tile-screen-brick
     width: 11em
     height: 11em
     position: relative
     float: left
+
+    +mobile-landscape-and-below
+        width: 100%
 
     background: $COLOR_BOX
     overflow: hidden
