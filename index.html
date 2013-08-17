@@ -2,9 +2,8 @@
 <html lang="en" ng-app="passy">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Pascal Hartig | passy.me</title>
-    <meta name="description" content="">
+    <meta name="description" content="Pascal Hartig - Frontend Engineer">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700">
@@ -13,16 +12,16 @@
   <body passy-konami>
     <div class="container">
       <header role="banner">
-        <div class="content"><a href="/" title="passy.me" class="nolink logo">
-            <div class="icon"></div><span>passy.me</span></a>
+        <div class="content"><a href="/" title="passy.me" class="logo">
+            <div class="logo__icon"></div><span class="logo__text">passy.me</span></a>
           <nav role="navigation">
             <ul class="main-menu">
               <li class="active"><a href="/">About</a></li>
               <li><a href="/projects.html">Projects</a></li>
               <li><a href="https://weluse.de/blog">Blog</a></li>
             </ul>
-            <div href="#" class="overflow"><span class="icon"></span></div>
-            <div class="overflow-menu">
+            <div class="overflow"><span class="icon"></span></div>
+            <div class="overflow__menu">
               <div class="inner">
                 <ul>
                   <li><a href="mailto:phartig@rdrei.net">Feedback</a></li>
@@ -35,21 +34,21 @@
         </div>
       </header>
       <section role="main" ng-controller="IndexCtrl">
-        <div id="s-index"><a name="intro"></a>
+        <div id="s-index"><a id="intro"></a>
           <div class="saying-hi"><img src="/images/passy.jpg" alt="Pascal Hartig" passy-onkonami="doMagic($element)" class="me">
-            <hgroup>
+            <div class="headings">
               <h1>Hi, I'm Pascal Hartig.</h1>
               <h2>
                 I'm a Software Engineer at weluse <span class="superamp">&amp;</span>
                 Open Source Addict.
               </h2>
-            </hgroup>
-          </div><a name="social"></a>
+            </div>
+          </div><a id="social"></a>
           <ul class="social">
             <li><a href="/g" class="github"></a></li>
             <li><a href="/@" class="twitter"></a></li>
             <li><a href="/+" class="gplus"></a></li>
-          </ul><a name="about"></a>
+          </ul><a id="about"></a>
           <article class="prose">
             <p>
               I'm Pascal and I love building stuff. My favorite platforms
@@ -104,8 +103,8 @@
     </script>
     <div>
       <!-- bower -->
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
       <!-- endbower -->
       
     </div>
