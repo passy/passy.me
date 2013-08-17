@@ -257,8 +257,9 @@ a
         margin-top: 0
 
 .affix
-    position: fixed
-    top: 0
+    +desktop-and-up
+        position: fixed
+        top: 0
 
 @import pages/index
 @import pages/projects
