@@ -11,7 +11,7 @@
         +mobile-portrait-and-below
             // Approximation for crappy browsers, even though I don't really care.
             top: $default-top - 3 * 16px
-            +calc(top, '#{$default-top} - #{$HEADER_HEIGHT} - 1em')
+            top: calc(#{$default-top} - #{$HEADER_HEIGHT} - 1em)
 
         &:hover
             +shadow
@@ -23,7 +23,7 @@
             width: design-sprite-width('icon_more')
             height: design-sprite-height('icon_more')
 
-    .overflow-menu
+    .overflow__menu
         transition-timing-function: ease
         transition-property: opacity, height
         transition-duration: 0

@@ -1,4 +1,5 @@
 @import colors
+@import compass/css3/shared
 @import partials/media-queries
 @import partials/image-2x
 @import partials/overflow-menu
@@ -10,9 +11,6 @@ $CONTENT_MAX_WIDTH: 960px
 $MENU_WIDTH: 180px
 $HEADER_HEIGHT: 48px
 
-=calc($property, $expression)
-    $experimental-support-for-opera: true
-    +experimental-value($property, "calc(#{$expression})")
 
 =clearfix
     &::after
@@ -23,12 +21,11 @@ $HEADER_HEIGHT: 48px
 =shadow
     box-shadow: 0 0 5px rgba(black, 0.3)
 
-
 body > *
     box-sizing: border-box
 
 html
-    text-size-adjust: 100%
+    +experimental('text-size-adjust', '100%')
 
 body
     background: $COLOR_BG
@@ -92,16 +89,15 @@ a
         height: $HEADER_HEIGHT
         width: $MENU_WIDTH
 
-        .icon
-            display: inline-block
-            background: image_url("logo.svg") no-repeat
-            width: 3em
-            height: 3em
+    .logo__icon
+        display: inline-block
+        background: image_url("logo.svg") no-repeat
+        width: 3em
+        height: 3em
 
-        span
-            vertical-align: top
-            margin-left: 1em
-            letter-spacing: 0.2
+    .logo__text
+        vertical-align: top
+        margin-left: 1em
 
     .content
         +desktop-and-up
@@ -259,9 +255,6 @@ a
 
     p
         margin-top: 0
-
-.sticky
-    position: sticky
 
 .affix
     position: fixed

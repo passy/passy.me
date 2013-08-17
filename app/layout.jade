@@ -15,9 +15,8 @@ mixin menu-entry(href, slug, title)
 html(lang='en', ng-app='passy')
   head
     meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     title #{title} | passy.me
-    meta(name='description', content='')
+    meta(name='description', content='Pascal Hartig - Frontend Engineer')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     link(rel='stylesheet', href='styles/main.css')
     link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:400,500,700')
@@ -29,9 +28,9 @@ html(lang='en', ng-app='passy')
       header(role='banner')
         .content
 
-          a.nolink.logo(href='/', title='passy.me')
-            .icon
-            span passy.me
+          a.logo(href='/', title='passy.me')
+            .logo__icon
+            span.logo__text passy.me
 
           nav(role='navigation')
             ul.main-menu
@@ -41,10 +40,10 @@ html(lang='en', ng-app='passy')
               li
                 a(href='https://weluse.de/blog') Blog
 
-            div.overflow(href='#')
+            div.overflow
               span.icon
 
-            div.overflow-menu
+            div.overflow__menu
               div.inner
                 ul
                   li

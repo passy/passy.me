@@ -3,16 +3,16 @@ extends layout
 block content
     section(role='main', ng-controller='IndexCtrl')
         #s-index
-            a(name='intro')
+            a(id='intro')
             .saying-hi
                 img.me(src='/images/passy.jpg', alt='Pascal Hartig', passy-onkonami='doMagic($element)')
-                hgroup
+                .headings
                     h1 Hi, I'm Pascal Hartig.
                     h2
                         | I'm a Software Engineer at weluse <span class="superamp">&amp;</span>
                         | Open Source Addict.
 
-            a(name='social')
+            a(id='social')
             ul.social
                 li
                     a.github(href='/g')
@@ -21,7 +21,7 @@ block content
                 li
                     a.gplus(href='/+')
 
-            a(name='about')
+            a(id='about')
             article.prose
                 p
                     | I'm Pascal and I love building stuff. My favorite platforms
