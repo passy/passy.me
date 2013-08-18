@@ -1,6 +1,6 @@
 /*global angular*/
 
-(function (window) {
+(function () {
     'use strict';
-    window.passy = angular.module('passy', ['mgcrea.bootstrap.affix']);
-}(this));
+    angular.module('passy', ['mgcrea.bootstrap.affix']);
+}());

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    window.passy.directive('passyKonami', [function () {
+    angular.module('passy').directive('passyKonami', [function () {
         var code = '38,38,40,40,37,39,37,39,66,65';
 
         return function passyKonamiDirective(scope, element) {
