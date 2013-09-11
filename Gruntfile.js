@@ -70,21 +70,17 @@ module.exports = function (grunt) {
             },
             test: {
                 options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, 'test')
-                        ];
-                    }
+                    base: [
+                        '.tmp',
+                        'test'
+                    ]
                 }
             },
             dist: {
                 options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, 'dist')
-                        ];
-                    }
+                    base: [
+                        'dist'
+                    ]
                 }
             }
         },
