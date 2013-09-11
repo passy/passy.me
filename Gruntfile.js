@@ -1,9 +1,5 @@
 // Generated on 2013-03-23 using generator-webapp 0.1.5
 'use strict';
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
-};
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -39,7 +35,9 @@ module.exports = function (grunt) {
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
                 ],
-                tasks: ['livereload']
+                options: {
+                    livereload: '<%= connect.livereload.options.livereload %>'
+                }
             }
         },
         autoprefixer: {
@@ -63,13 +61,11 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    middleware: function (connect) {
-                        return [
-                            lrSnippet,
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, 'app')
-                        ];
-                    }
+                    livereload: 32979,
+                    base: [
+                        '.tmp',
+                        'app'
+                    ]
                 }
             },
             test: {
@@ -322,7 +318,6 @@ module.exports = function (grunt) {
             'compass:server',
             'autoprefixer',
             'jade',
-            'livereload-start',
             'connect:livereload',
             'watch'
         ]);
