@@ -8,6 +8,7 @@
   ],
   "main": "jquery.js",
   "license": "MIT",
+  "homepage": "https://github.com/components/jquery",
   "_release": "2.0.3",
   "_resolution": {
     "type": "version",
