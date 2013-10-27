@@ -281,6 +281,9 @@ module.exports = function (grunt) {
             }
         },
         shell: {
+            options: {
+                failOnError: true
+            },
             commitDist: {
                 command: 'git add -A && git commit -m "gh-pages update"',
                 options: {
