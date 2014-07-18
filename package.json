@@ -2,6 +2,8 @@
   "name": "passy-me",
   "version": "0.0.0",
   "dependencies": {},
+  "private": true,
+  "repository": "passy/passy.me",
   "devDependencies": {
     "grunt": "~0.4.0",
     "grunt-contrib-copy": "~0.4.0",
