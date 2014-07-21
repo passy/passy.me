@@ -4,7 +4,7 @@
   "dependencies": {
     "angular": "~1.0.5",
     "jquery": "~2.0.0",
-    "angular-bootstrap-affix": "~0.2.1"
+    "angular-bootstrap-affix": "passy/angular-bootstrap-affix#ad09e29bc0ebb63cfa59a0b201ead5b8edaff4bf"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.5"
