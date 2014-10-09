@@ -1,0 +1,76 @@
+==================================================================
+https://keybase.io/passy
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://passy.me
+  * I am passy (https://keybase.io/passy) on keybase.
+  * I have a public key with fingerprint C3FE DCD8 0092 2806 F173  B773 515D 9610 18EE A4AF
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "c3fedcd800922806f173b773515d961018eea4af",
+            "host": "keybase.io",
+            "key_id": "515d961018eea4af",
+            "uid": "fb0ca7857f3f0dbb0bfd8be897b86900",
+            "username": "passy"
+        },
+        "revoke": {
+            "sig_ids": [
+                "a0f7cd4ff4dca299ba064e9ade5b1a29c422a35a4a6cb66b5f2b53c0b343dc000f"
+            ]
+        },
+        "service": {
+            "hostname": "passy.me",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1412855520,
+    "expire_in": 157680000,
+    "prev": "589b17c9465677e2b604c9f11972e19cd37a6d42566fec9d4b182f1e3dc6cdf7",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owFtUn1MVWUchivKRxEUA0203KHRFjd8z/c515kWyRYTl0LKx+By3nPeczkI917u
+udzka8vyVkjyEcGyQSHCAImAZoAuRQu8JbqhDIYNTckMLl+KrtZk1Dmstv7or/d9
+n/f5Pc/v9+xXFbzGx+C7N6MudMNCc5fv8Az0SWZcU8UYtEmFmKkYO4hWD1mxWpDD
+7lCsTsyEiaSMJFHiAOAJggOMjLMkZFmSxmmJZ3CAcwgJlCBjRizbpuoVmgwUVBSr
+2DRMe5gVSUP/h1+w+iFDIAosR7MyKQMJQgBliYOI41nIMTwAOlFFDquQhzS2XVDV
+QqzUiDmQy3YQ6f2qikWzUDFTOiYAmRUlSpYpSRQInocCYCjECxKiIa4BIkUQAklr
+/owIGQbSMgFpUgSQpEhJBADIWIamrdm5FHFVXJ/pv9ax2tWI2R02p0205WpottNp
+N+kNOQvtOuttBM3/1JuhYpW0MLUCF3Kois2KmXCNKToVXRCncIKjaZoARgwdsisO
+ZFZ0Bs0yWtoA6DbIpUfH8RBnRZ5iaIZlEQEZQIm8jOM8SyCcFyWSFRiJImiGkZHI
+SxTEOULGkTYSI0oyi+kT5Vttmjau9SlYNE0tNGuA4CxwIKw0qMywyc/H1+Czbq1B
+3wifoMDQf9ck82jIykv1ORuT8JrW3M/GBl5IbG+o8F/ak2qOPNtbrP78057bV+m2
+wdlHnpDoph2XBwb79r2a8LBve/2UMBr0V6b6bk3q1xBPzjLV4fHT9d896Un5IC3w
+YZh50JO507X8uOTpgZDZ18zgEn/1m/2PXwzuJ+bjRuLy8zu3RT1xyzjn7ptet5g4
+sv7Cmhhz0b73l8onFgermg4/6Ohq88OisrZFbDfELB2uLbs37Jg98WGs5a0red6c
+6262+/zQfF/2fMOuU+nT5+/UJEUM9YaUjnuLb/VMep4tD5q/lvtrVc/c/o+3pheP
+9vsG+idM4T2/i+Obci7dj1xIyb+/tv2rWT7cnX/9nZcjYe8J8cjeO8FzDc2eLZtT
+Kknv2axPR1rbj/xpyXnj5NHMc2KLx1zZmVdNcctXujvxyqiswLy43R9FhEWWr7iN
+LVtu7EwuCX3mj94bERtqRl0/xKT29hUF3bvmF9/YZf3kde+jgLHQNCa6/vTNV8rH
+DM0XE9TG43kzv1zcnPljkrf/AJhZOGQZrdgx3yFwZVUHMib9vwzrWJoo6S+8W7Ty
+W0PAt7WBBYu1bi58K/1cyN3hXFMcSNzYGFxxfGKSuhxtSar+/PbQe1Fp609eqEh7
+/mjBMXc18X33ePuZ8AdfNIW9+VRY4u7TZ06d6wd0RHgLvmu5tcxJelvbuKJE27E6
+YepmfGuB+jc=
+=XGC5
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/passy
+
+==================================================================
