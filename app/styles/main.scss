@@ -6,12 +6,7 @@
  *
  */
 @import '_h5bp';
-
-/*
- * Visual Style Guide styles
- * Remove if you prefer to use a CSS library, like Bootstrap
- */
-// @import 'components/components';
+@import '_icons';
 
 $colors: (
   bg: #fff,
@@ -53,7 +48,8 @@ a, a:link, a:visited {
   text-decoration: none;
   transform: translateY(0);
   transition: transform .1s ease-out,
-              text-shadow .1s ease-out;
+              text-shadow .1s ease-out,
+              filter .1s ease-out;
 }
 
 a:hover {
