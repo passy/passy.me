@@ -30,6 +30,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -57,11 +59,22 @@ a:hover {
   text-shadow: 0 4px 0 rgba(0,0,0,.1);
 }
 
+.panel--top {
+  flex: 1 0 auto;
+}
+
+.panel--bottom {
+  flex: 1 0 auto;
+  background-color: c(primary);
+}
+
 .main--container {
   width: 100%;
   background-color: c(primary);
+  position: relative;
 
   display: flex;
+  flex: 0 0 auto;
   justify-content: center;
 }
 
