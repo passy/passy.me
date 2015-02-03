@@ -1,0 +1,175 @@
+/*
+ * Web Starter Kit
+ *
+ * Multi-screen layout styles for your page. Brought to you by the
+ * Web Starter Kit team.
+ *
+ */
+@import '_h5bp';
+@import '_icons';
+
+$colors: (
+  bg: #fff,
+  primary: #55acee,
+  prose: rgba(255, 255, 255, .75),
+  link: #fff
+);
+
+@function c($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: c(bg);
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  min-height: 100%;
+}
+
+a, a:link, a:visited {
+  color: c(link);
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  transform: translateY(0);
+  transition: transform .1s ease-out,
+              text-shadow .1s ease-out,
+              filter .1s ease-out;
+}
+
+a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 4px 0 rgba(0,0,0,.1);
+}
+
+.panel--top {
+  flex: 1 0 auto;
+}
+
+.panel--bottom {
+  flex: 1 0 auto;
+  background-color: c(primary);
+}
+
+.main--container {
+  width: 100%;
+  background-color: c(primary);
+  position: relative;
+
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+}
+
+.main--container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: c(bg);
+  width: 100%;
+  height: 6rem;
+}
+
+.main--content {
+  position: relative;
+  width: 17rem;
+
+  color: c(prose);
+  font-size: 150%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.me-avatar {
+  width: 128px;
+  height: 128px;
+  background: url(../images/avatar.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  border: 4px solid c(bg);
+  align-self: center;
+}
+
+.list--inline {
+  li {
+    list-style-type: none;
+    display: inline-block;
+  }
+}
+
+.superamp {
+  font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', Georgia, serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/fonts/RobotoCondensed-Light.eot);
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'), url(/fonts/RobotoCondensed-Light.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Light.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/RobotoCondensed-Regular.eot);
+  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(/fonts/RobotoCondensed-Regular.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/RobotoCondensed-Bold.eot);
+  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Bold'), url(/fonts/RobotoCondensed-Bold.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 300;
+  src: url(/fonts/RobotoCondensed-LightItalic.eot);
+  src: local('Roboto Condensed Light Italic'), local('RobotoCondensed-LightItalic'), url(/fonts/RobotoCondensed-LightItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-LightItalic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 400;
+  src: url(/fonts/RobotoCondensed-Italic.eot);
+  src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'), url(/fonts/RobotoCondensed-Italic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  src: url(/fonts/RobotoCondensed-BoldItalic.eot);
+  src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url(/fonts/RobotoCondensed-BoldItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-BoldItalic.woff) format('woff');
+}
