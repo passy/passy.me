@@ -1,19 +1,17 @@
-/* the humans responsible & colophon */
-/* humanstxt.org */
+# humanstxt.org/
+# The humans responsible & technology colophon
 
-/* TEAM */
+# TEAM
 
-Pascal Hartig
-Site: http://passy.me
-Twitter: @passy
-Location: London, UK
+  Pascal Hartig
+  Site: http://passy.me
+  Twitter: @passy
+  Location: London, UK
 
-/* THANKS */
+# THANKS
 
-yeoman.io
+  Web Starter Kit <https://developers.google.com/web/starter-kit/>
 
-/* SITE */
+# TECHNOLOGY COLOPHON
 
-Standards: HTML5, CSS3
-Components: Modernizr
-Software: vim, yo, grunt, bower, compass, jade, gimp
+  HTML5, CSS3
