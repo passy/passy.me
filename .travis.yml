@@ -22,7 +22,7 @@ env:
         # travis encrypt GH_OAUTH_TOKEN=XXXXXXXXXXXXXXX
         #
         # User specific env variables
-        - secure: "fHgfjMpYuliwMr2QLnjYZExIViNrxprf9dhXRBLZ6P9Hz7P6m1BMYrI/xEG8X+fFbCi0+n3AXh8SEMHi9ou/Pty/cx12z4w/z3B2BHMxh4XBwpZHs+AB4IXkLiwwWoP4QFy4vTipgYnMDMq9CRhlRbhZEpenQBmaTEc472By1uM="
+        - secure: "bk8rPrAwTa6gl9tyHfFkWN1YA3ABZqeEfBVbNdMApw9leaVDM5GEg+jSbWh7P5hPvC5DJsVG0mNbexKoLU4YfShiQZkiVMSHpqbTQlXT90zVjBBwwBCuBZZgdlLdQpYlVKW1qexXFgJnWAcpBdNMkk42yGO6PNLMwPuPwbS3K3s="
         - GH_OWNER: passy
         - GH_PROJECT_NAME: passy.me
 
