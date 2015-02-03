@@ -6,12 +6,23 @@
  *
  */
 @import '_h5bp';
+@import '_icons';
 
-/*
- * Visual Style Guide styles
- * Remove if you prefer to use a CSS library, like Bootstrap
- */
-@import 'components/components';
+$colors: (
+  bg: #fff,
+  primary: #55acee,
+  prose: rgba(255, 255, 255, .75),
+  link: #fff
+);
+
+@function c($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
 
 html,
 body {
@@ -19,15 +30,87 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  position: relative;
+  background-color: c(bg);
+  box-sizing: border-box;
   font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
   font-weight: 300;
-  background-color: #fff;
-  box-sizing: border-box;
   min-height: 100%;
+}
+
+a, a:link, a:visited {
+  color: c(link);
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  transform: translateY(0);
+  transition: transform .1s ease-out,
+              text-shadow .1s ease-out,
+              filter .1s ease-out;
+}
+
+a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 4px 0 rgba(0,0,0,.1);
+}
+
+.main--container {
+  width: 100%;
+  background-color: c(primary);
+
+  display: flex;
+  justify-content: center;
+}
+
+.main--container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: c(bg);
+  width: 100%;
+  height: 6rem;
+}
+
+.main--content {
+  position: relative;
+  width: 17rem;
+
+  color: c(prose);
+  font-size: 150%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.me-avatar {
+  width: 128px;
+  height: 128px;
+  background: url(../images/avatar.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  border: 4px solid c(bg);
+  align-self: center;
+}
+
+.list--inline {
+  li {
+    list-style-type: none;
+    display: inline-block;
+  }
+}
+
+.superamp {
+  font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', Georgia, serif;
+  font-style: italic;
+  font-weight: normal;
 }
 
 @font-face {
