@@ -158,18 +158,10 @@ a:hover {
   src: local('Roboto Condensed Light Italic'), local('RobotoCondensed-LightItalic'), url(/fonts/RobotoCondensed-LightItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-LightItalic.woff) format('woff');
 }
 
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: italic;
-  font-weight: 400;
-  src: url(/fonts/RobotoCondensed-Italic.eot);
-  src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'), url(/fonts/RobotoCondensed-Italic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Italic.woff) format('woff');
+html, body {
+  color: $text-color-secondary;
 }
 
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: italic;
-  font-weight: 700;
-  src: url(/fonts/RobotoCondensed-BoldItalic.eot);
-  src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url(/fonts/RobotoCondensed-BoldItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-BoldItalic.woff) format('woff');
+h1, h2, h3, h4, h5 {
+  color: $text-color-primary;
 }
