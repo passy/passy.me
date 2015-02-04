@@ -5,7 +5,6 @@
  * Web Starter Kit team.
  *
  */
-@import '_h5bp';
 @import '_icons';
 
 $colors: (
@@ -156,12 +155,4 @@ a:hover {
   font-weight: 300;
   src: url(/fonts/RobotoCondensed-LightItalic.eot);
   src: local('Roboto Condensed Light Italic'), local('RobotoCondensed-LightItalic'), url(/fonts/RobotoCondensed-LightItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-LightItalic.woff) format('woff');
-}
-
-html, body {
-  color: $text-color-secondary;
-}
-
-h1, h2, h3, h4, h5 {
-  color: $text-color-primary;
 }
