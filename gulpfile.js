@@ -34,7 +34,7 @@ var packageJson = require('./package.json');
 
 // Lint JavaScript
 gulp.task('jshint', function() {
-  return gulp.src(['app/scripts/**/*.js', 'app/styleguide/**/*.js'])
+  return gulp.src(['app/scripts/**/*.js'])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -62,13 +62,6 @@ gulp.task('copy', function() {
     dot: true
   }).pipe(gulp.dest('dist'))
     .pipe($.size({title: 'copy'}));
-});
-
-// Copy image files from the Styleguide
-gulp.task('styleguide-images', function() {
-  return gulp.src('app/styleguide/**/*.{svg,png,jpg}')
-    .pipe(gulp.dest('dist/styleguide/'))
-    .pipe($.size({title: 'styleguide-images'}));
 });
 
 // Copy Web Fonts To Dist
@@ -130,23 +123,9 @@ gulp.task('html', function() {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
   return gulp.src('app/**/**/*.html')
-    .pipe(assets)
-    // Remove Any Unused CSS
-    // Note: If not using the Style Guide, you can delete it from
-    // the next line to only include styles your project uses.
-    .pipe($.if('*.css', $.uncss({
-      html: [
-        'app/index.html'
-      ],
-      // CSS Selectors for UnCSS to ignore
-      ignore: []
-    })))
-
-    // Concatenate And Minify Styles
-    // In case you are still using useref build blocks
-    .pipe($.if('*.css', $.csso()))
-    .pipe(assets.restore())
-    .pipe($.useref())
+    .pipe($.inline({
+      base: 'dist/'
+    }))
     // Minify Any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
@@ -172,7 +151,7 @@ gulp.task('serve', ['styles'], function() {
 
   gulp.watch(['app/**/**/**/*.html'], reload);
   gulp.watch(['app/**/**/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js','app/styleguide/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
 });
 
@@ -194,7 +173,7 @@ gulp.task('serve:dist', ['default'], function() {
 gulp.task('default', ['clean'], function(cb) {
   runSequence(
     'styles',
-    ['jshint', 'html', 'scripts', 'images', 'styleguide-images', 'fonts', 'copy'],
+    ['jshint', 'html', 'scripts', 'images', 'fonts', 'copy'],
     'generate-service-worker',
     cb);
 });
