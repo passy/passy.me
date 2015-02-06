@@ -123,6 +123,7 @@ gulp.task('html', function() {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
   return gulp.src('app/**/**/*.html')
+    .pipe($.useref())
     .pipe($.inline({
       base: 'dist/'
     }))
