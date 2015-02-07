@@ -33,7 +33,7 @@ var path = require('path');
 var packageJson = require('./package.json');
 
 // Lint JavaScript
-gulp.task('jshint', function() {
+gulp.task('jshint', function () {
   return gulp.src(['app/scripts/**/*.js'])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
@@ -42,7 +42,7 @@ gulp.task('jshint', function() {
 });
 
 // Optimize Images
-gulp.task('images', function() {
+gulp.task('images', function () {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
@@ -53,26 +53,26 @@ gulp.task('images', function() {
 });
 
 // Copy All Files At The Root Level (app)
-gulp.task('copy', function() {
+gulp.task('copy', function () {
   return gulp.src([
     'CNAME',
     'app/*',
     '!app/*.html'
-  ], {
+ ], {
     dot: true
   }).pipe(gulp.dest('dist'))
     .pipe($.size({title: 'copy'}));
 });
 
 // Copy Web Fonts To Dist
-gulp.task('fonts', function() {
+gulp.task('fonts', function () {
   return gulp.src(['app/fonts/**'])
     .pipe(gulp.dest('dist/fonts'))
     .pipe($.size({title: 'fonts'}));
 });
 
 // Compile and Automatically Prefix Stylesheets
-gulp.task('styles', function() {
+gulp.task('styles', function () {
 
   var AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
@@ -84,13 +84,13 @@ gulp.task('styles', function() {
     'ios >= 7',
     'android >= 4.4',
     'bb >= 10'
-  ];
+ ];
 
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
     'app/**/*.scss',
     'app/styles/**/*.css'
-  ])
+ ])
     .pipe($.changed('.tmp/styles', {extension: '.css'}))
     .pipe($.sass({
       precision: 10,
@@ -105,11 +105,11 @@ gulp.task('styles', function() {
 });
 
 // Concatenate And Minify JavaScript
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
   var sources = [
     // Scripts
     'app/scripts/**/*.js'
-  ];
+ ];
   return gulp.src(sources)
     .pipe($.concat('main.min.js'))
     .pipe($.uglify({preserveComments: 'some'}))
@@ -119,7 +119,7 @@ gulp.task('scripts', function() {
 });
 
 // Scan Your HTML For Assets & Optimize Them
-gulp.task('html', function() {
+gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
   return gulp.src('app/**/**/*.html')
@@ -138,7 +138,7 @@ gulp.task('html', function() {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles'], function() {
+gulp.task('serve', ['styles'], function () {
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix
@@ -157,7 +157,7 @@ gulp.task('serve', ['styles'], function() {
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function() {
+gulp.task('serve:dist', ['default'], function () {
   browserSync({
     notify: false,
     logPrefix: 'WSK',
@@ -171,7 +171,7 @@ gulp.task('serve:dist', ['default'], function() {
 });
 
 // Build Production Files, the Default Task
-gulp.task('default', ['clean'], function(cb) {
+gulp.task('default', ['clean'], function (cb) {
   runSequence(
     'styles',
     ['jshint', 'html', 'scripts', 'images', 'fonts', 'copy'],
@@ -195,7 +195,7 @@ gulp.task('pagespeed', function (cb) {
 // Generate a service worker file that will provide offline functionality for
 // local resources. This should only be done for the 'dist' directory, to allow
 // live reload to work as expected when serving from the 'app' directory.
-gulp.task('generate-service-worker', function(callback) {
+gulp.task('generate-service-worker', function (callback) {
   var rootDir = 'dist';
 
   swPrecache({
@@ -218,15 +218,15 @@ gulp.task('generate-service-worker', function(callback) {
       rootDir + '/scripts/**/*.js',
       rootDir + '/styles/**/*.css',
       rootDir + '/*.{html,json}'
-    ],
+   ],
     // Translates a static file path to the relative URL that it's served from.
     stripPrefix: path.join(rootDir, path.sep)
-  }, function(error, serviceWorkerFileContents) {
+  }, function (error, serviceWorkerFileContents) {
     if (error) {
       return callback(error);
     }
     fs.writeFile(path.join(rootDir, 'service-worker.js'),
-      serviceWorkerFileContents, function(error) {
+      serviceWorkerFileContents, function (error) {
       if (error) {
         return callback(error);
       }
