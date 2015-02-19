@@ -24,7 +24,7 @@
 
 
 
-var PrecacheConfig = [["./","da4157d444d1272d3f2c57406c332e64"],["fonts/Material-Design-Iconic-Font.woff","a2a1ba89e7f9d29f7d5aee76e8b9f7ab"],["fonts/RobotoCondensed-Bold.woff","b957df7eb343c0e307cc3c4b5e642b0a"],["fonts/RobotoCondensed-BoldItalic.woff","fea624b4c2620b6f5db428e227f2845c"],["fonts/RobotoCondensed-Italic.woff","f6a7296c31954622227519621438298d"],["fonts/RobotoCondensed-Light.woff","febf32a2c55979f8644ba9dfe804ca2b"],["fonts/RobotoCondensed-LightItalic.woff","f09b84ef0af8be7687407830447ec594"],["fonts/RobotoCondensed-Regular.woff","94e480548f3165c92301d1e317593e90"],["images/avatar.jpg","3189d32e684e92dcf784a4496ac7954c"],["images/icons/icons-hinted.ttf","d41d8cd98f00b204e9800998ecf8427e"],["images/icons/icons.eot","742c4affdabd597249ab4d8f32ceb5d9"],["images/icons/icons.svg","2dca70f790605999284d8175a59ec3a1"],["images/icons/icons.ttf","43ac9104d6fac184272ba3784167577d"],["images/icons/icons.woff","e470c7159d62bbeedf51a7d98e65ca4d"],["images/icons/icons.woff2","1a75a1500dc4614b85523f4183cdeef7"],["images/icons/placeholder--medium.png","baa033665c8a070a9e5a66c2bd8b0474"],["images/icons/placeholder--small.png","d5efa06871740522ebb8ae5da95b7737"],["images/icons/placeholder--wide.png","0f9f6ff52eac6a13ab562341c6e329d1"],["images/touch/apple-touch-icon.png","7326f54bfe6776293f08b34c3a5fde7b"],["images/touch/chrome-touch-icon-192x192.png","571f134f59f14a6d298ddd66c015b293"],["images/touch/icon-128x128.png","7c46d686765c49b813ac5eb34fabf712"],["images/touch/ms-touch-icon-144x144-precomposed.png","452d90b250d6f41a0c8f9db729113ffd"],["index.html","cc68ca309b7a3d86fb536e98ac86cfd6"],["manifest.json","7304b8f23ee8cc56034a19d196566b2a"],["scripts/main.min.js","25b749af19fb2257ccc298875cd3b93a"],["styles/main.css","bc772504eb40b7594f0dd8273279351b"]];
+var PrecacheConfig = [["./","ebb0f8f138f954b59aea47fda73f0862"],["fonts/Material-Design-Iconic-Font.woff","a2a1ba89e7f9d29f7d5aee76e8b9f7ab"],["fonts/RobotoCondensed-Bold.woff","b957df7eb343c0e307cc3c4b5e642b0a"],["fonts/RobotoCondensed-BoldItalic.woff","fea624b4c2620b6f5db428e227f2845c"],["fonts/RobotoCondensed-Italic.woff","f6a7296c31954622227519621438298d"],["fonts/RobotoCondensed-Light.woff","febf32a2c55979f8644ba9dfe804ca2b"],["fonts/RobotoCondensed-LightItalic.woff","f09b84ef0af8be7687407830447ec594"],["fonts/RobotoCondensed-Regular.woff","94e480548f3165c92301d1e317593e90"],["images/avatar.jpg","3189d32e684e92dcf784a4496ac7954c"],["images/icons/icons-hinted.ttf","d41d8cd98f00b204e9800998ecf8427e"],["images/icons/icons.eot","742c4affdabd597249ab4d8f32ceb5d9"],["images/icons/icons.svg","2dca70f790605999284d8175a59ec3a1"],["images/icons/icons.ttf","43ac9104d6fac184272ba3784167577d"],["images/icons/icons.woff","e470c7159d62bbeedf51a7d98e65ca4d"],["images/icons/icons.woff2","1a75a1500dc4614b85523f4183cdeef7"],["images/icons/placeholder--medium.png","baa033665c8a070a9e5a66c2bd8b0474"],["images/icons/placeholder--small.png","d5efa06871740522ebb8ae5da95b7737"],["images/icons/placeholder--wide.png","0f9f6ff52eac6a13ab562341c6e329d1"],["images/touch/apple-touch-icon.png","7326f54bfe6776293f08b34c3a5fde7b"],["images/touch/chrome-touch-icon-192x192.png","571f134f59f14a6d298ddd66c015b293"],["images/touch/icon-128x128.png","7c46d686765c49b813ac5eb34fabf712"],["images/touch/ms-touch-icon-144x144-precomposed.png","452d90b250d6f41a0c8f9db729113ffd"],["index.html","6888c0c363fdb9aaf21f04f37ddddb6f"],["manifest.json","7304b8f23ee8cc56034a19d196566b2a"],["scripts/main.min.js","25b749af19fb2257ccc298875cd3b93a"],["styles/main.css","bc772504eb40b7594f0dd8273279351b"]];
 var CacheNamePrefix = 'sw-precache-v1-web-starter-kit-' + (self.registration ? self.registration.scope : '') + '-';
 
 
@@ -104,7 +104,17 @@ self.addEventListener('install', function(event) {
 
           console.log('Adding URL "%s" to cache named "%s"', urlWithCacheBusting, cacheName);
           return caches.open(cacheName).then(function(cache) {
-            return cache.add(new Request(urlWithCacheBusting, {credentials: 'same-origin'}));
+            var request = new Request(urlWithCacheBusting, {credentials: 'same-origin'});
+            return fetch(request.clone()).then(function(response) {
+              if (response.status == 200) {
+                return cache.put(request, response);
+              } else {
+                console.error('Request for %s returned a response with status %d, so not attempting to cache it.',
+                  urlWithCacheBusting, response.status);
+                // Get rid of the empty cache if we can't add a successful response to it.
+                return caches.delete(cacheName);
+              }
+            });
           });
         })
       ).then(function() {
@@ -172,92 +182,4 @@ self.addEventListener('fetch', function(event) {
     }
   }
 });
-
-
-
-// From https://github.com/coonsta/cache-polyfill/blob/master/dist/serviceworker-cache-polyfill.js
-
-if (!Cache.prototype.add) {
-  Cache.prototype.add = function add(request) {
-    return this.addAll([request]);
-  };
-}
-
-if (!Cache.prototype.addAll) {
-  Cache.prototype.addAll = function addAll(requests) {
-    var cache = this;
-
-    // Since DOMExceptions are not constructable:
-    function NetworkError(message) {
-      this.name = 'NetworkError';
-      this.code = 19;
-      this.message = message;
-    }
-    NetworkError.prototype = Object.create(Error.prototype);
-
-    return Promise.resolve().then(function() {
-      if (arguments.length < 1) throw new TypeError();
-
-      // Simulate sequence<(Request or USVString)> binding:
-      var sequence = [];
-
-      requests = requests.map(function(request) {
-        if (request instanceof Request) {
-          return request;
-        }
-        else {
-          return String(request); // may throw TypeError
-        }
-      });
-
-      return Promise.all(
-          requests.map(function(request) {
-            if (typeof request === 'string') {
-              request = new Request(request);
-            }
-
-            var scheme = new URL(request.url).protocol;
-
-            if (scheme !== 'http:' && scheme !== 'https:') {
-              throw new NetworkError("Invalid scheme");
-            }
-
-            return fetch(request.clone());
-          })
-      );
-    }).then(function(responses) {
-      // TODO: check that requests don't overwrite one another
-      // (don't think this is possible to polyfill due to opaque responses)
-      return Promise.all(
-          responses.map(function(response, i) {
-            return cache.put(requests[i], response);
-          })
-      );
-    }).then(function() {
-      return undefined;
-    });
-  };
-}
-
-if (!CacheStorage.prototype.match) {
-  // This is probably vulnerable to race conditions (removing caches etc)
-  CacheStorage.prototype.match = function match(request, opts) {
-    var caches = this;
-
-    return this.keys().then(function(cacheNames) {
-      var match;
-
-      return cacheNames.reduce(function(chain, cacheName) {
-        return chain.then(function() {
-          return match || caches.open(cacheName).then(function(cache) {
-                return cache.match(request, opts);
-              }).then(function(response) {
-                match = response;
-                return match;
-              });
-        });
-      }, Promise.resolve());
-    });
-  };
-}
 
