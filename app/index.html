@@ -33,6 +33,14 @@
 
     <!-- Not on the site itself, but might still be helpful for Git Gossip and co. -->
     <link rel="alternate" type="application/rss+xml" href="http://passy.svbtle.com/feed">
+
+    <script>
+      // Poor man's HSTS until it's supported by Cloudflare.
+      // (Obviously, this is nothing like actual "pinning". I'm not that stupid.)
+      if (window.location.hostname.indexOf('passy.me') >= 0 && window.location.protocol !== 'https:') {
+        window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+      }
+    </script>
   </head>
   <body>
 
