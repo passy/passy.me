@@ -1,4 +1,4 @@
-# passy.me
+# passy.me [![Build Status](https://travis-ci.org/passy/passy.me.svg?branch=master)](https://travis-ci.org/passy/passy.me)
 
 ## Overview
 
