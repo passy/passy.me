@@ -57,6 +57,7 @@ gulp.task('copy', function () {
   return gulp.src([
     'CNAME',
     'app/*',
+    'app/.well-known/*',
     '!app/*.html'
  ], {
     dot: true
