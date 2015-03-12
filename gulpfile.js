@@ -57,12 +57,21 @@ gulp.task('copy', function () {
   return gulp.src([
     'CNAME',
     'app/*',
-    'app/.well-known/*',
     '!app/*.html'
  ], {
     dot: true
   }).pipe(gulp.dest('dist'))
     .pipe($.size({title: 'copy'}));
+});
+
+// Copy Well Known Files
+gulp.task('copy-well-known', function () {
+  return gulp.src([
+    'app/.well-known/*',
+ ], {
+    dot: true
+  }).pipe(gulp.dest('dist/.well-known/'))
+    .pipe($.size({title: 'copy well-known'}));
 });
 
 // Copy Web Fonts To Dist
@@ -175,7 +184,7 @@ gulp.task('serve:dist', ['default'], function () {
 gulp.task('default', ['clean'], function (cb) {
   runSequence(
     'styles',
-    ['jshint', 'html', 'scripts', 'images', 'fonts', 'copy'],
+    ['jshint', 'html', 'scripts', 'images', 'fonts', 'copy', 'copy-well-known'],
     'generate-service-worker',
     cb);
 });
