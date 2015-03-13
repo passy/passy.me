@@ -42,6 +42,7 @@ after_success:
     - git rm -r .
     - cp -r ../dist/.* .
     - cp -R ../dist/* .
+    - cp ../dist/.well-known/keybase.txt .
     - git add -f .
     - git config user.email "travis@rdrei.net"
     - git config user.name "TasteBot"
