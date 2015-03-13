@@ -40,8 +40,8 @@ after_success:
     - cd site
     - if git checkout gh-pages; then git checkout -b gh-pages; fi
     - git rm -r .
+    - cp -r ../dist/.* .
     - cp -R ../dist/* .
-    - cp -R ../dist/.* .
     - git add -f .
     - git config user.email "travis@rdrei.net"
     - git config user.name "TasteBot"
