@@ -6,6 +6,10 @@
   margin: .2em;
 }
 
+.icon {
+  text-indent: -10000px;
+}
+
 // Kinda unsure about this. Context-dependent declarations
 // are a maintainance nightmare. On the other hand, I don't
 // want the downstream consumer having to deal with this.
