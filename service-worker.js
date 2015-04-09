@@ -17,20 +17,28 @@
 // This generated service worker JavaScript will precache your site's resources.
 // The code needs to be saved in a .js file at the top-level of your site, and registered
 // from your pages in order to be used. See
-// https://github.com/jeffposnick/sw-precache/blob/master/demo/app/js/service-worker-registration.js
+// https://github.com/googlechrome/sw-precache/blob/master/demo/app/js/service-worker-registration.js
 // for an example of how you can register this script and handle various service worker events.
 
 'use strict';
 
 
 
-var PrecacheConfig = [["./","7199fe1057eba632baa06ba3daad370f"],["fonts/Material-Design-Iconic-Font.woff","a2a1ba89e7f9d29f7d5aee76e8b9f7ab"],["fonts/RobotoCondensed-Bold.woff","b957df7eb343c0e307cc3c4b5e642b0a"],["fonts/RobotoCondensed-BoldItalic.woff","fea624b4c2620b6f5db428e227f2845c"],["fonts/RobotoCondensed-Italic.woff","f6a7296c31954622227519621438298d"],["fonts/RobotoCondensed-Light.woff","febf32a2c55979f8644ba9dfe804ca2b"],["fonts/RobotoCondensed-LightItalic.woff","f09b84ef0af8be7687407830447ec594"],["fonts/RobotoCondensed-Regular.woff","94e480548f3165c92301d1e317593e90"],["images/avatar.jpg","00c39903bab92e69fc530948c0f574d3"],["images/icons/icons-hinted.ttf","d41d8cd98f00b204e9800998ecf8427e"],["images/icons/icons.eot","742c4affdabd597249ab4d8f32ceb5d9"],["images/icons/icons.svg","2dca70f790605999284d8175a59ec3a1"],["images/icons/icons.ttf","43ac9104d6fac184272ba3784167577d"],["images/icons/icons.woff","e470c7159d62bbeedf51a7d98e65ca4d"],["images/icons/icons.woff2","1a75a1500dc4614b85523f4183cdeef7"],["images/icons/placeholder--medium.png","baa033665c8a070a9e5a66c2bd8b0474"],["images/icons/placeholder--small.png","d5efa06871740522ebb8ae5da95b7737"],["images/icons/placeholder--wide.png","0f9f6ff52eac6a13ab562341c6e329d1"],["images/touch/apple-touch-icon.png","7326f54bfe6776293f08b34c3a5fde7b"],["images/touch/chrome-touch-icon-192x192.png","571f134f59f14a6d298ddd66c015b293"],["images/touch/icon-128x128.png","7c46d686765c49b813ac5eb34fabf712"],["images/touch/ms-touch-icon-144x144-precomposed.png","452d90b250d6f41a0c8f9db729113ffd"],["index.html","3a07b3f3b214faacc486f8a8550688ed"],["manifest.json","7304b8f23ee8cc56034a19d196566b2a"],["scripts/main.min.js","25b749af19fb2257ccc298875cd3b93a"],["styles/main.css","bc772504eb40b7594f0dd8273279351b"]];
+var PrecacheConfig = [["./","3da1a0637518b237686a6849b01f1b28"],["fonts/Material-Design-Iconic-Font.woff","a2a1ba89e7f9d29f7d5aee76e8b9f7ab"],["fonts/RobotoCondensed-Bold.woff","b957df7eb343c0e307cc3c4b5e642b0a"],["fonts/RobotoCondensed-BoldItalic.woff","fea624b4c2620b6f5db428e227f2845c"],["fonts/RobotoCondensed-Italic.woff","f6a7296c31954622227519621438298d"],["fonts/RobotoCondensed-Light.woff","febf32a2c55979f8644ba9dfe804ca2b"],["fonts/RobotoCondensed-LightItalic.woff","f09b84ef0af8be7687407830447ec594"],["fonts/RobotoCondensed-Regular.woff","94e480548f3165c92301d1e317593e90"],["images/avatar.jpg","3189d32e684e92dcf784a4496ac7954c"],["images/icons/icons-hinted.ttf","d41d8cd98f00b204e9800998ecf8427e"],["images/icons/icons.eot","742c4affdabd597249ab4d8f32ceb5d9"],["images/icons/icons.svg","46661d6d65debc63884004fed6e37e5c"],["images/icons/icons.ttf","43ac9104d6fac184272ba3784167577d"],["images/icons/icons.woff","e470c7159d62bbeedf51a7d98e65ca4d"],["images/icons/icons.woff2","1a75a1500dc4614b85523f4183cdeef7"],["images/icons/placeholder--medium.png","baa033665c8a070a9e5a66c2bd8b0474"],["images/icons/placeholder--small.png","d5efa06871740522ebb8ae5da95b7737"],["images/icons/placeholder--wide.png","0f9f6ff52eac6a13ab562341c6e329d1"],["images/touch/apple-touch-icon.png","7326f54bfe6776293f08b34c3a5fde7b"],["images/touch/chrome-touch-icon-192x192.png","571f134f59f14a6d298ddd66c015b293"],["images/touch/icon-128x128.png","7c46d686765c49b813ac5eb34fabf712"],["images/touch/ms-touch-icon-144x144-precomposed.png","452d90b250d6f41a0c8f9db729113ffd"],["index.html","17527ea038fb80a18eca7c6dca0fb1a1"],["manifest.json","7304b8f23ee8cc56034a19d196566b2a"],["scripts/main.min.js","25b749af19fb2257ccc298875cd3b93a"],["styles/main.css","81fe7dd4fb65aa660901a8a43098b67a"]];
 var CacheNamePrefix = 'sw-precache-v1-web-starter-kit-' + (self.registration ? self.registration.scope : '') + '-';
 
 
 var IgnoreUrlParametersMatching = [/^utm_/];
 
 
+
+var addDirectoryIndex = function (originalUrl, index) {
+    var url = new URL(originalUrl);
+    if (url.pathname.slice(-1) === '/') {
+      url.pathname += index;
+    }
+    return url.toString();
+  };
 
 var populateCurrentCacheNames = function (precacheConfig, cacheNamePrefix, baseUrl) {
     var absoluteUrlToCacheName = {};
@@ -167,6 +175,12 @@ self.addEventListener('fetch', function(event) {
       IgnoreUrlParametersMatching);
 
     var cacheName = AbsoluteUrlToCacheName[urlWithoutIgnoredParameters];
+    var directoryIndex = 'index.html';
+    if (!cacheName && directoryIndex) {
+      urlWithoutIgnoredParameters = addDirectoryIndex(urlWithoutIgnoredParameters, directoryIndex);
+      cacheName = AbsoluteUrlToCacheName[urlWithoutIgnoredParameters];
+    }
+
     if (cacheName) {
       event.respondWith(
         // We can't call cache.match(event.request) since the entry in the cache will contain the
