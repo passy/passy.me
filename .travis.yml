@@ -28,6 +28,10 @@ env:
         - GH_OWNER: passy
         - GH_PROJECT_NAME: passy.me
 
+cache:
+    directories:
+        - node_modules
+
 before_script:
     # install dependencies
     - npm install -g gulp
