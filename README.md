@@ -8,4 +8,4 @@ Base on [Web Starter Kit](https://developers.google.com/web/starter-kit), an opi
 ## License
 
 Apache 2.0
-Copyright 2015 Pascal Hartig
+Copyright 2015- Pascal Hartig
