@@ -3,7 +3,7 @@
     "apache-server-configs": "^2.7.1",
     "browser-sync": "^2.8.2",
     "del": "^2.1.0",
-    "eslint": "^1.2.1",
+    "eslint": "^3.15.0",
     "gulp": "^3.8.5",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.0",
