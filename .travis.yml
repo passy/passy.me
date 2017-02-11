@@ -34,7 +34,7 @@ cache:
 
 before_script:
     # install dependencies
-    - npm install -g gulp
+    - npm install -g gulp jshint
 script:
     # We want to gate on passing tests and a successful build
     - gulp
