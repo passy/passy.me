@@ -34,8 +34,11 @@ cache:
 
 before_script:
     # install dependencies
-    - npm install -g gulp jshint
+    - npm install -g gulp
 script:
+    # I can't tell you why that's necessary, but according to this it should work:
+    # https://github.com/sass/node-sass/issues/1579
+    - npm rebuild node-sass --no-bin-links
     # We want to gate on passing tests and a successful build
     - gulp
 after_success:
