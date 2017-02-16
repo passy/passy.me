@@ -26,7 +26,7 @@
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.0.1",
     "node-sass": "^4.5.0",
-    "psi": "^2.0.0",
+    "psi": "^3.0.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.0.2",
     "sw-precache": "^1.2.1"
