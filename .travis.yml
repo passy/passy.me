@@ -11,6 +11,7 @@ node_js:
 branches:
     only:
         - master
+        - /^greenkeeper/.*$/
 env:
     global:
         # GH_OAUTH_TOKEN is the oauth token generated as described at
