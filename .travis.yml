@@ -7,7 +7,7 @@ language:
 sudo:
     false
 node_js:
-    - "4.1"
+    - "7"
 branches:
     only:
         - master
