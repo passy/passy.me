@@ -122,7 +122,10 @@ gulp.task('scripts', function () {
  ];
   return gulp.src(sources)
     .pipe($.concat('main.min.js'))
-    .pipe($.uglify({preserveComments: 'some'}))
+    .pipe($.uglify().on('error', function (err) {
+      console.log('[Error]', err.toString());
+      this.emit('end');
+    }))
     // Output Files
     .pipe(gulp.dest('dist/scripts'))
     .pipe($.size({title: 'scripts'}));
@@ -130,8 +133,6 @@ gulp.task('scripts', function () {
 
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function () {
-  var assets = $.useref.assets({searchPath: '{.tmp,app}'});
-
   return gulp.src('app/**/**/*.html')
     .pipe($.useref())
     .pipe($.inline({
@@ -208,7 +209,7 @@ gulp.task('pagespeed', function (cb) {
 gulp.task('generate-service-worker', function (callback) {
   var rootDir = 'dist';
 
-  swPrecache({
+  swPrecache.write(rootDir + '/service-worker.js', {
     // Used to avoid cache conflicts when serving on localhost.
     cacheId: packageJson.name || 'web-starter-kit',
     // URLs that don't directly map to single static files can be defined here.
@@ -231,18 +232,7 @@ gulp.task('generate-service-worker', function (callback) {
    ],
     // Translates a static file path to the relative URL that it's served from.
     stripPrefix: path.join(rootDir, path.sep)
-  }, function (error, serviceWorkerFileContents) {
-    if (error) {
-      return callback(error);
-    }
-    fs.writeFile(path.join(rootDir, 'service-worker.js'),
-      serviceWorkerFileContents, function (error) {
-      if (error) {
-        return callback(error);
-      }
-      callback();
-    });
-  });
+  }, callback);
 });
 
 // Load custom tasks from the `tasks` directory
