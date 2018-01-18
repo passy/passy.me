@@ -4,7 +4,7 @@
 # TEAM
 
   Pascal Hartig
-  Site: http://passy.me
+  Site: https://passy.me
   Twitter: @passy
   Location: London, UK
 
