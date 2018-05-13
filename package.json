@@ -1,11 +1,11 @@
 {
   "devDependencies": {
-    "apache-server-configs": "^2.7.1",
+    "apache-server-configs": "^3.0.0",
     "browser-sync": "^2.8.2",
     "del": "^3.0.0",
     "eslint": "^4.1.0",
     "gulp": "^3.8.5",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-cache": "^1.0.2",
     "gulp-changed": "^3.1.0",
     "gulp-concat": "^2.4.1",
@@ -18,7 +18,7 @@
     "gulp-load-plugins": "^1.1.0",
     "gulp-minify-html": "^1.0.4",
     "gulp-replace": "^0.6.1",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.1",
     "gulp-size": "^3.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uncss": "^1.0.3",
@@ -27,7 +27,7 @@
     "jshint-stylish": "^2.0.1",
     "node-sass": "^4.5.0",
     "psi": "^3.0.0",
-    "require-dir": "^0.3.0",
+    "require-dir": "^1.0.0",
     "run-sequence": "^2.0.0",
     "sw-precache": "^5.0.0"
   },
