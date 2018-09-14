@@ -48,7 +48,8 @@
         }
       };
     }).catch(function (e) {
-      console.error('Error during service worker registration:', e);
+      console.error('Error during service worker registration:', e); // eslint-disable-line no-console
+
     });
   }
 })();
