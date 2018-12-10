@@ -4,7 +4,7 @@
     "browser-sync": "^2.8.2",
     "del": "^3.0.0",
     "eslint": "^4.1.0",
-    "gulp": "^3.8.5",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-cache": "^1.0.2",
     "gulp-changed": "^3.1.0",
