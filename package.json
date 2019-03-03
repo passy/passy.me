@@ -2,7 +2,7 @@
   "devDependencies": {
     "apache-server-configs": "^3.0.0",
     "browser-sync": "^2.8.2",
-    "del": "^3.0.0",
+    "del": "^4.0.0",
     "eslint": "^5.9.0",
     "gulp": "^3.8.5",
     "gulp-autoprefixer": "^6.0.0",
