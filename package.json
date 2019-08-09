@@ -15,7 +15,7 @@
     "gulp-imagemin": "^4.0.0",
     "gulp-inline": "^0.1.0",
     "gulp-jshint": "^2.0.0",
-    "gulp-load-plugins": "^1.1.0",
+    "gulp-load-plugins": "^2.0.1",
     "gulp-minify-html": "^1.0.4",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.1",
