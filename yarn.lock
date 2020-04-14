@@ -162,9 +162,10 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
-apache-server-configs@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/apache-server-configs/-/apache-server-configs-3.0.0.tgz#b3b474b69ea0b5bbced4eb5be74222fe97ffe91b"
+apache-server-configs@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/apache-server-configs/-/apache-server-configs-4.0.0.tgz#0fc2749804bd89dc02dd3d9b64d2b3a749f4f981"
+  integrity sha512-WAEOWUtR8YD4fCYjL/Ld+4kO50X14BoUkZmcNpHRQhtftWFjcinfwaVvgW5naNbaWfXLH2mJvX9ah2AcWIBCdw==
 
 aproba@^1.0.3:
   version "1.1.1"
